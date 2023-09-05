@@ -9,25 +9,31 @@ function DataCard({data}) {
 
     // console.log(data)
 const [isHovering,setIsHovering] = useState(false)
-const [target,setTarget] = useState('')
-const [itemName,setItemName] = useState('')
+const [itemId,setItemId] = useState()
 
-const mouseHandler = (e,name)=>{
-    setItemName(name)
-    setTarget(e.target.alt);
 
-    if(itemName === target){
+const mouseHandler = (e,id)=>{
+    // setItemName(name)
+    // setTarget(e.target.alt);
+    setIsHovering(true)
+    setItemId(id)
+    // if(itemName === target){
 
-        e.target.style.display = 'none'
-    }
+    //     e.target.style.display = 'none'
+    // }
 
     // setIsHovering()
+
+    
 }
 
 const mouseLeaveHandler = (e)=>{
     // setIsHovering(()=> false)
     // console.log(isHovering)  
-    e.target.style.display = 'block'
+    // e.target.style.display = 'block'
+    setIsHovering(false)
+    setItemId('')
+
 }
 
 
@@ -38,16 +44,21 @@ const mouseLeaveHandler = (e)=>{
         {data ? (
             <div className="container">
             {data?.map((item,key)=>{
-                return  <div className="poster" key={key}>
+                return  <div className="poster" key={item.id} onMouseEnter={(e)=>mouseHandler(e,item.id)}  onMouseLeave={(e)=>mouseLeaveHandler(e)} >
                 {  
                      <>
-                     <div className="poster-title">
+                     <div className="poster-title" key={key}>
                         <h2>{item.name}</h2>
-                        <div className="desc">
+                        <div className={isHovering ? 'Desc' : 'desc'}>
                          <AiOutlineStar/> <span>{item.rating.average}</span>
+                         <br></br>
+                         <h2 className="genre" key={item.id}> Genre {item.genres.map((list)=> <span className="genres">{list}</span>)}</h2>
                         </div>
                      </div>
-                    <img key={item.id} className="poster-img"  src={item.image.original} alt={item.name} onMouseEnter={(e)=>mouseHandler(e,item.name)} onMouseLeave={(e)=>mouseLeaveHandler(e)} />
+                     {
+                        itemId != item.id ? <img key={item.id}  className='poster-img' src={item.image.original} alt={item.name}  />
+ : ' '
+                     }
 
                      </>
                     
