@@ -53,6 +53,10 @@ const mouseLeaveHandler = (e)=>{
                          <AiOutlineStar/> <span>{item.rating.average}</span>
                          <br></br>
                          <h2 className="genre" key={item.id}> Genre {item.genres.map((list)=> <span className="genres">{list}</span>)}</h2>
+                         <br></br>
+                         <span>premiered: {item.premiered}</span>
+                         <br></br>
+                         <span style={{fontSize:'8px'}}> URL :{item.url}</span>
                         </div>
                      </div>
                      {
