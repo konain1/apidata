@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./DataCard.css";
 import { useState } from "react";
 
@@ -6,15 +6,30 @@ import { useState } from "react";
 
 function DataCard({data}) {
 
-    console.log(data)
+    // console.log(data)
 const [isHovering,setIsHovering] = useState(false)
+const [target,setTarget] = useState('')
+const [itemName,setItemName] = useState('')
 
+const mouseHandler = (e,name)=>{
+    setItemName(name)
+    setTarget(e.target.alt);
 
-const mouseHandler = (e)=>{
-    const selectImg = e.target
-    selectImg.style.display = 'none'
-    setIsHovering(true)
+    if(itemName === target){
+
+        e.target.style.display = 'none'
+    }
+
+    // setIsHovering()
 }
+
+const mouseLeaveHandler = (e)=>{
+    // setIsHovering(()=> false)
+    // console.log(isHovering)  
+    e.target.style.display = 'block'
+}
+
+
 
   return (
 
@@ -23,14 +38,15 @@ const mouseHandler = (e)=>{
             <div className="container">
             {data?.map((item,key)=>{
                 return  <div className="poster" key={key}>
-                {
-                    isHovering === true ? <div>{
-                         <>
-                         <h1>{item.name}</h1>
-                        <p>{item.rating.average}</p>
-                         </>                       
-                    }</div>:
-                    <img className="poster-img" src={item.image.original} alt={item.name}  onMouseEnter={(e)=>mouseHandler(e)}/>
+                {  
+                     <>
+                     <div className="poster-title">
+                        <h2>{item.name}</h2>
+                     </div>
+                    <img key={item.id} className="poster-img"  src={item.image.original} alt={item.name} onMouseEnter={(e)=>mouseHandler(e,item.name)} onMouseLeave={(e)=>mouseLeaveHandler(e)} />
+
+                     </>
+                    
 
                 }
                 </div>
