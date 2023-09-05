@@ -1,7 +1,21 @@
 import React from "react";
 import "./DataCard.css";
+import { useState } from "react";
+
+
+
 function DataCard({data}) {
-  console.log(data);
+
+    console.log(data)
+const [isHovering,setIsHovering] = useState(false)
+
+
+const mouseHandler = (e)=>{
+    const selectImg = e.target
+    selectImg.style.display = 'none'
+    setIsHovering(true)
+}
+
   return (
 
     <>
@@ -9,7 +23,16 @@ function DataCard({data}) {
             <div className="container">
             {data?.map((item,key)=>{
                 return  <div className="poster" key={key}>
-                <img className="poster-img" src={item.image.original} alt={item.name}/>
+                {
+                    isHovering === true ? <div>{
+                         <>
+                         <h1>{item.name}</h1>
+                        <p>{item.rating.average}</p>
+                         </>                       
+                    }</div>:
+                    <img className="poster-img" src={item.image.original} alt={item.name}  onMouseEnter={(e)=>mouseHandler(e)}/>
+
+                }
                 </div>
             })}
         </div>) : 'waiting...'}

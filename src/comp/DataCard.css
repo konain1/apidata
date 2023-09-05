@@ -1,14 +1,15 @@
 
 .container {
     border: 1px solid black;
-    margin: 10rem auto;
+    margin: 5rem auto;
+    padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-content: space-around;
-    gap: 2rem;
+    gap: 5rem;
+
 }
 .poster{
-    border: 2px solid red;
     display: flex;
     justify-content: center;
     height: 400px;
@@ -16,12 +17,24 @@
     justify-content: center;
     margin: 0 auto;
     border-radius: 15px;
-    transform: rotate(5deg)
+    /* transform: rotate(5deg); */
+    background: transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+
 .poster-img {
+    transform: rotate(3deg);
+    transition: 0.2s ease-in 0.5ms;
     height: 100%;
     width: 100%;
     border-radius: 15px;
     /* display: none; */
+    cursor: pointer;
+
+}
+
+.poster-img:hover{
+    transform: rotate(0deg);
+    
 
 }
