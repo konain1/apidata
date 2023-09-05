@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./DataCard.css";
 import { useState } from "react";
+import {AiOutlineStar} from 'react-icons/ai'
 
 
 
@@ -42,6 +43,9 @@ const mouseLeaveHandler = (e)=>{
                      <>
                      <div className="poster-title">
                         <h2>{item.name}</h2>
+                        <div className="desc">
+                         <AiOutlineStar/> <span>{item.rating.average}</span>
+                        </div>
                      </div>
                     <img key={item.id} className="poster-img"  src={item.image.original} alt={item.name} onMouseEnter={(e)=>mouseHandler(e,item.name)} onMouseLeave={(e)=>mouseLeaveHandler(e)} />
 

@@ -17,11 +17,13 @@
     justify-content: center;
     margin: 0 auto;
     border-radius: 15px;
-    /* transform: rotate(5deg); */
     background: #222;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+.poster:hover{
+    transform: rotate(5deg);
 
+}
 .poster-img {
     transform: rotate(3deg);
     transition: 0.2s ease-in 0.5ms;
@@ -35,10 +37,43 @@
 .poster-title{
     color: aliceblue;
     font-family: 'Aclonica', sans-serif;
+    margin: 10px 10px;
 }
 
 .poster-img:hover{
     transform: rotate(0deg);
 
 
+}
+
+/* media query */
+
+@media screen and (max-width:1200px) {
+    
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .poster{
+        width: 250px;
+        height: 250px;
+    }
+    .poster-title{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .poster{
+        width: 250px;
+        height: 250px;
+    }
+    .poster-title{
+        font-size: 8px;
+    }
 }
