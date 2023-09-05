@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import axios from 'axios'
+import DataCard from "./comp/DataCard";
 
 
 
@@ -12,7 +13,7 @@ function App() {
  
 
 
-  console.log(data)
+ 
 
   useEffect(()=>{
     axios.get(url).then(res => {
@@ -27,18 +28,7 @@ function App() {
     <div className="App">
      
       <>
-        <div>
-          {
-            data?.map((item,key)=>{
-              return(
-                <>
-                  <p>{item.name}</p>
-                  <span> {item.genres}</span>
-                </>
-              )
-            })
-          }
-        </div>
+      { data.length > 0 ? <DataCard data={data}/> : 'loading .....'} 
       </>
 
     </div>
