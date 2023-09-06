@@ -32,13 +32,15 @@
     width: 100%;
     border-radius: 15px;
     /* display: none; */
-    cursor: pointer;
+   
 
 }
-
-.no-poster {
+/* .poster-img:hover{
+    background: transparent ;
+} */
+/* .no-poster {
     display: none;
-}
+} */
 .poster-title{
     color: aliceblue;
     font-family: 'Aclonica', sans-serif;
@@ -74,6 +76,8 @@
     .container{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+
     }
     .poster{
         width: 250px;
@@ -89,6 +93,7 @@
     .container{
         display: grid;
         grid-template-columns: 1fr;
+        overflow: hidden;
     }
     .poster{
         width: 250px;
