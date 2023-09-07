@@ -69,6 +69,10 @@
 .Desc{
     display: block;
 }
+
+.hidden{
+    display: none;
+}
 /* media query */
 
 @media screen and (max-width:1200px) {

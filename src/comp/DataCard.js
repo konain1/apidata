@@ -15,7 +15,7 @@ function DataCard({ data }) {
  
     setIsHovering(true);
     setItemId(id);
-    console.log(myRef)
+    // console.log(myRef)
     // myRef.current.style.display = 'none'    
    
     
@@ -36,7 +36,12 @@ function DataCard({ data }) {
     myRef.current.style.display = 'block'; // You can use 'inline', 'inline-block', 'flex', etc. depending on your layout needs.
   };
 
-  
+  const mouseEnterFunction = ()=>{
+    setIsHovering(true)
+  }
+  const mouseLeaveFunction = ()=>{
+    setIsHovering(false)
+  }
 
   return (
     <>
@@ -49,17 +54,22 @@ function DataCard({ data }) {
                 key={item.id}
                 onMouseEnter={(e) => mouseHandler(e, item.id)}
                 onMouseLeave={(e) => mouseLeaveHandler(e)}
+                // onMouseEnter={mouseEnterFunction}
+                // onMouseLeave={mouseLeaveFunction}
               >
                 {
+
                   <>
-                    <div className="poster-title" key={key}>
+                    <div className="poster-title" key={item.id}>
                       <h2>{item.name}</h2>
-                      <div className={isHovering ? "Desc" : "desc"}>
+                      <div className={itemId == item.id ? "poster-title" : "hidden"}>
+
                         <AiOutlineStar /> <span>{item.rating.average}</span>
                         <br key={key}></br>
                         <h2 className="genre" key={item.id}>
-                          {" "}
-                          Genre{" "}
+
+                       
+                          Genre
                           {item.genres.map((list) => (
                             <span className="genres">{list}</span>
                           ))}
@@ -80,8 +90,8 @@ function DataCard({ data }) {
                         className={"poster-img"}
                         src={item.image.original}
                         alt={item.name}
-                        onMouseEnter={hideImage}
-                        onMouseLeave={showImage}
+                        // onMouseEnter={hideImage}
+                        // onMouseLeave={showImage}
                       />
                     ) : (
                       " "
