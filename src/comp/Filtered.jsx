@@ -1,6 +1,7 @@
 
 import React from 'react'
-import {useState,useMemo,useEffect} from 'react'
+import {useState,useEffect} from 'react'
+import DataCard from './DataCard'
 
 function Filtered({data}) {
 
@@ -9,16 +10,16 @@ function Filtered({data}) {
 
     useEffect(()=>{
         ratingData()
-    },[])
+    },[data])
    
 
     const ratingData = ()=>{
 
         let movies = data.filter((movie)=>{
-            return movie.rating.average > 5.2
+            return movie.rating.average > 7.2
         })
         setMovies(movies)
-        console.log(movies)
+        // console.log(movies)
         }
        
 
@@ -28,16 +29,8 @@ function Filtered({data}) {
    
   return (
     <div>
-    {
-        movies.map((movie,index)=>{
-            return (
-                <>
-                <p>{movie.name}</p>
-                <p>{movie.rating.average}</p>
-                </>
-            )
-        })
-    }
+    
+    <DataCard data={movies} />
    
     </div>
   )
