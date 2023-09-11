@@ -17,7 +17,7 @@ function App() {
   useEffect(()=>{
     axios.get(url).then(res => {
       
-      setData(res.data.splice(0,9))
+      setData(res.data.splice(0,29))
     }).catch(err => console.log(err))
   },[])
 

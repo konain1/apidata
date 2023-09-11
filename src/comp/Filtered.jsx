@@ -6,6 +6,11 @@ import DataCard from './DataCard'
 function Filtered({data}) {
 
     const [movies,setMovies] = useState([])
+    const [genre,setGenre] = useState('')
+    const [rating,setRating] = useState(1)
+
+
+
     
 
     useEffect(()=>{
@@ -15,11 +20,19 @@ function Filtered({data}) {
 
     const ratingData = ()=>{
 
-        let movies = data.filter((movie)=>{
-            return movie.rating.average > 7.2
+        let moviesData = data.filter((movie)=>{
+            return movie.rating.average > rating;
         })
-        setMovies(movies)
-        // console.log(movies)
+
+        if(genre !== ''){
+          let allFiltered = moviesData.filter((item)=>{
+             return item.genres[0] == genre || item.genres[1] == genre || item.genres[2] == genre
+         })
+         setMovies(allFiltered)
+        }else{
+            setMovies(moviesData)
+        }
+    
         }
        
 
