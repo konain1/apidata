@@ -1,8 +1,7 @@
 import { useState,useEffect } from "react";
 import axios from 'axios'
 import DataCard from "./comp/DataCard";
-
-
+import Filtered from "./comp/Filtered";
 
 
 const url = 'https://api.tvmaze.com/shows'
@@ -28,7 +27,9 @@ function App() {
     <div className="App">
      
       <>
-      { data.length > 0 ? <DataCard data={data}/> : 'loading .....'} 
+      {/* { data.length > 0 ? <DataCard data={data}/>  : 'loading .....'}  */}
+      { data.length > 0 ? <Filtered data={data}/>  : 'loading .....'} 
+
       </>
 
     </div>
