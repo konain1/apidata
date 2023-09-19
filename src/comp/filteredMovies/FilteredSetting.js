@@ -1,7 +1,37 @@
 import React from 'react'
 import './FilteredSetting.css'
 
+import {useSelector} from 'react-redux'
+import {useState} from 'react'
+
 function FilteredSetting() {
+
+
+  const [category,setCategory] = useState([])
+
+// let category = []
+  const allgenresData = useSelector(state=>state.movieReducer.moviesData)
+
+
+  const puregenre = ()=>{
+    allgenresData.map((item)=>{
+      if(!category.includes(item.genres[0])){
+        // category.push(item.genres[0])
+        setCategory(item.genres[0])
+      }
+    })
+
+    
+  }
+  console.log(allgenresData)
+
+//  puregenre();
+
+
+
+
+  
+   
   return (
     <div>
     <div className="filteredsetting">
@@ -16,8 +46,12 @@ function FilteredSetting() {
     {/* genre  */}
 
     <div className='genreBox'>
+    <button onClick={puregenre}>get genre</button>
+    {/* {category.map((genre,key)=>{
+      return <p>{key}</p>
+    })} */}
 
-      
+
     </div>
      
     

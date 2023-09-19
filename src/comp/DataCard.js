@@ -61,10 +61,10 @@ function DataCard({ data }) {
 
                   <>
                     <div className="poster-title" key={item.id}>
-                      <h2>{item.name}</h2>
-                      <div className={itemId === item.id ? "poster-title" : "hidden"}>
+                      <h2 key={item.name}>{item.name}</h2>
+                      <div key={item.genres[1]} className={itemId === item.id ? "poster-title" : "hidden"}>
 
-                        <AiOutlineStar /> <span>{item.rating.average}</span>
+                        <AiOutlineStar /> <span key={key}>{item.rating.average}</span>
                         <br key={item.id}></br>
                         <h2 className="genre" key={item.id}>
 
@@ -74,9 +74,9 @@ function DataCard({ data }) {
                           ))}
                         </h2>
                         <br></br>
-                        <span>premiered: {item.premiered}</span>
+                        <span key={key}>premiered: {item.premiered}</span>
                         <br></br>
-                        <span style={{ fontSize: "8px" }}>
+                        <span key={key} style={{ fontSize: "8px" }}>
                           {" "}
                           URL :{item.url}
                         </span>
@@ -85,12 +85,11 @@ function DataCard({ data }) {
                     {itemId !== item.id ? (
                       <img
                         ref={myRef}
-                        key={item.id}
+                        key={item.genres[0]}
                         className={"poster-img"}
                         src={item.image.original}
                         alt={item.name}
-                        // onMouseEnter={hideImage}
-                        // onMouseLeave={showImage}
+                      
                       />
                     ) : (
                       " "
