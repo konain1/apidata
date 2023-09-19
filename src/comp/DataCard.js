@@ -4,13 +4,21 @@ import { useState } from "react";
 import { AiOutlineStar } from "react-icons/ai";
 import  { useRef } from 'react';
 import {TbDatabaseSearch} from 'react-icons/tb'
+import {useSelector} from 'react-redux'
+import { pagination } from "../featuresSlice/DataSlice";
 
 
 
 function DataCard({ data }) {
-    const myRef = useRef();
+
+  const pageindex = useSelector(state=>state. movieReducer.pageindex)
+
+
+  const myRef = useRef();
+  const pageRef  = useRef(pageindex+10)
   const [isHovering, setIsHovering] = useState(false);
   const [itemId, setItemId] = useState();
+
 
   const mouseHandler = (e, id) => {
  
@@ -18,8 +26,6 @@ function DataCard({ data }) {
     setItemId(id);
     // console.log(myRef)
     // myRef.current.style.display = 'none'    
-   
-    
   };
 
   const mouseLeaveHandler = (e) => {
@@ -37,32 +43,19 @@ function DataCard({ data }) {
     myRef.current.style.display = 'block'; // You can use 'inline', 'inline-block', 'flex', etc. depending on your layout needs.
   };
 
-  // const mouseEnterFunction = ()=>{
-  //   setIsHovering(true)
-  // }
-  // const mouseLeaveFunction = ()=>{
-  //   setIsHovering(false)
-  // }
-
-  // const [filterOn,setFilterOn] = useState('false')
-
-  // const filterOnOff=()=>{
-  //  setFilterOn(!filterOn)
-  // }
 
   return (
     <>
       {data ? (
-        <div className="container">
-          {data?.map((item, key) => {
+        <div className="container" key={data.id}> 
+          {data?.slice(pageindex,pageRef.current).map((item, key) => {
             return (
               <div
                 className="poster"
                 key={item.id}
                 onMouseEnter={(e) => mouseHandler(e, item.id)}
                 onMouseLeave={(e) => mouseLeaveHandler(e)}
-                // onMouseEnter={mouseEnterFunction}
-                // onMouseLeave={mouseLeaveFunction}
+              
               >
                 {
 
@@ -72,12 +65,12 @@ function DataCard({ data }) {
                       <div className={itemId === item.id ? "poster-title" : "hidden"}>
 
                         <AiOutlineStar /> <span>{item.rating.average}</span>
-                        <br key={key}></br>
+                        <br key={item.id}></br>
                         <h2 className="genre" key={item.id}>
 
                           Genre
-                          {item.genres.map((list) => (
-                            <span className="genres">{list}</span>
+                          {item.genres.map((list,key) => (
+                            <span key={key} className="genres">{list}</span>
                           ))}
                         </h2>
                         <br></br>

@@ -2,9 +2,9 @@
 import { createSlice} from '@reduxjs/toolkit'
 
 
-
 const initialState = {
-    moviesData:[]
+    moviesData:[],
+    pageindex:0
 }
 
 const dataSlice = createSlice({
@@ -15,9 +15,12 @@ const dataSlice = createSlice({
 
         addMovies:(state,{payload})=>{
             state.moviesData = payload
+        },
+        pagination:(state,{payload})=>{
+            state.pageindex = payload
         }
     }
 })
 
-export const {addMovies} = dataSlice.actions;
+export const {addMovies,pagination} = dataSlice.actions;
 export default dataSlice.reducer;

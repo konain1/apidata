@@ -3,7 +3,7 @@ import './MainContainer.css'
 import { useState,useEffect } from "react";
 import axios from 'axios'
 import Filtered from '../Filtered'
-import DataCard from '../DataCard';
+// import DataCard from '../DataCard';
 import FilteredSetting from '../filteredMovies/FilteredSetting';
 import {useDispatch,useSelector} from 'react-redux';
 import {addMovies} from '../../featuresSlice/DataSlice'
