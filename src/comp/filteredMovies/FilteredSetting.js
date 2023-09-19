@@ -10,11 +10,12 @@ function FilteredSetting() {
   const category = useMemo(() => {
     const uniqueGenres = new Set()
     allgenresData.forEach(item => {
-      uniqueGenres.add(item.genres[0])
+      uniqueGenres.add(item.genres[1])
     })
     return Array.from(uniqueGenres)
   }, [allgenresData])
 
+  console.log(category)
 return (
   <div>
     <div className="filteredsetting">
