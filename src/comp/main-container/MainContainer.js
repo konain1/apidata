@@ -5,21 +5,35 @@ import axios from 'axios'
 import Filtered from '../Filtered'
 import DataCard from '../DataCard';
 import FilteredSetting from '../filteredMovies/FilteredSetting';
-const url = 'https://api.tvmaze.com/shows'
+import {useDispatch,useSelector} from 'react-redux';
+import {addMovies} from '../../featuresSlice/DataSlice'
 
+
+
+
+const url = 'https://api.tvmaze.com/shows'
 
 function MainContainer() {
 
-    const [data,setData] = useState([])
+     
+        const fetchMovies = useSelector(state=> state.movieReducer.moviesData)
+
+    const dispatch = useDispatch();
+
+
+    // const [data,setData] = useState([])
 
     useEffect(()=>{
       axios.get(url).then(res => {
         
-        setData(res.data.splice(0,29))
+        // setData(res.data.splice(0,29))
+        dispatch(addMovies(res.data))
       }).catch(err => console.log(err))
     },[])
   
   
+
+    // console.log(fetchMovies)
 
 
 
@@ -30,7 +44,7 @@ function MainContainer() {
     </div>
     <div className='col-2'>
 
-    { data.length > 0 ? <Filtered data={data}/>  : 'loading .....'} 
+    { fetchMovies.length > 0 ? <Filtered data={fetchMovies}/>  : 'loading .....'} 
 
     </div>
 
