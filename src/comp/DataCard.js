@@ -3,6 +3,7 @@ import "./DataCard.css";
 import { useState } from "react";
 import { AiOutlineStar } from "react-icons/ai";
 import  { useRef } from 'react';
+import {TbDatabaseSearch} from 'react-icons/tb'
 
 
 
@@ -36,12 +37,18 @@ function DataCard({ data }) {
     myRef.current.style.display = 'block'; // You can use 'inline', 'inline-block', 'flex', etc. depending on your layout needs.
   };
 
-  const mouseEnterFunction = ()=>{
-    setIsHovering(true)
-  }
-  const mouseLeaveFunction = ()=>{
-    setIsHovering(false)
-  }
+  // const mouseEnterFunction = ()=>{
+  //   setIsHovering(true)
+  // }
+  // const mouseLeaveFunction = ()=>{
+  //   setIsHovering(false)
+  // }
+
+  // const [filterOn,setFilterOn] = useState('false')
+
+  // const filterOnOff=()=>{
+  //  setFilterOn(!filterOn)
+  // }
 
   return (
     <>
@@ -62,13 +69,12 @@ function DataCard({ data }) {
                   <>
                     <div className="poster-title" key={item.id}>
                       <h2>{item.name}</h2>
-                      <div className={itemId == item.id ? "poster-title" : "hidden"}>
+                      <div className={itemId === item.id ? "poster-title" : "hidden"}>
 
                         <AiOutlineStar /> <span>{item.rating.average}</span>
                         <br key={key}></br>
                         <h2 className="genre" key={item.id}>
 
-                       
                           Genre
                           {item.genres.map((list) => (
                             <span className="genres">{list}</span>
@@ -99,12 +105,19 @@ function DataCard({ data }) {
                   </>
                 }
               </div>
+
             );
           })}
         </div>
+        
       ) : (
         "waiting..."
       )}
+
+        <div>
+          
+        </div>
+
     </>
   );
 }

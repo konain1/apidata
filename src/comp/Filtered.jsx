@@ -26,14 +26,14 @@ function Filtered({data}) {
 
         if(genre !== ''){
           let allFiltered = moviesData.filter((item)=>{
-             return item.genres[0] == genre || item.genres[1] == genre || item.genres[2] == genre
+             return item.genres[0] === genre || item.genres[1] === genre || item.genres[2] === genre
          })
          setMovies(allFiltered)
         }else{
             setMovies(moviesData)
         }
     
-        }
+   }
        
 
        
@@ -44,6 +44,7 @@ function Filtered({data}) {
     <div>
     
     <DataCard data={movies} />
+
    
     </div>
   )

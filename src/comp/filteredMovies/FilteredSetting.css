@@ -1,0 +1,17 @@
+
+
+
+/* filtermovies */
+
+
+.filtermovies{
+    height: 100vh;  
+    background-color: #222;
+    color: aliceblue;
+    border-radius: 15px;
+   position: fixed;
+   width: 25%;
+    opacity: 0.6;
+
+    
+}

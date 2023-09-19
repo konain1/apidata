@@ -1,7 +1,11 @@
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .container {
     border: 1px solid black;
-    margin: 5rem auto;
+    /* margin: 5rem auto; */
     padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -12,8 +16,8 @@
 .poster{
     display: flex;
     justify-content: center;
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
     justify-content: center;
     margin: 0 auto;
     border-radius: 15px;
@@ -73,6 +77,26 @@
 .hidden{
     display: none;
 }
+
+.databaseIcon     {
+  font-size: 50px;
+  position:absolute;
+    left: 0;
+    z-index: 99;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* media query */
 
 @media screen and (max-width:1200px) {
