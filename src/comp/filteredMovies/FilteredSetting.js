@@ -1,6 +1,5 @@
 import React from 'react'
 import './FilteredSetting.css'
-import {IoMdSearch} from 'react-icons/io'
 
 function FilteredSetting() {
   return (
@@ -12,6 +11,13 @@ function FilteredSetting() {
 
       <input type='text'  placeholder='movieName' id='inputSearchBox' />
       <button className='searchBtn'>Search</button>
+    </div>
+
+    {/* genre  */}
+
+    <div className='genreBox'>
+
+      
     </div>
      
     
