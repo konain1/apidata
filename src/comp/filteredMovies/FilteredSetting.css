@@ -60,4 +60,36 @@
     background-color: lightgreen;
     color:#222;
 }
-
+.mainbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.genreBox{
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-wrap:nowrap;
+    height: 250px;
+    width: 450px;
+    place-items: center;
+    overflow: scroll; 
+    border-radius: 15px;
+}
+.genreBox::-webkit-scrollbar{
+    display: none;
+}
+.genreBox button {
+    display: inline-block;
+    margin: 10px 10px;
+    height: 40px;
+    width: 60px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.genreBox button:hover{
+    transform: scale(1.2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+}
