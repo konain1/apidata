@@ -37,6 +37,7 @@ function MainContainer() {
     // console.log(fetchMovies)
     const filterHandler = ()=>{
       console.log('samurai x')
+      setToggleFilter(!toggleFilter)
     }
 
 
@@ -44,10 +45,10 @@ function MainContainer() {
   return (
     <div className='maincontainer'>
     <div className='col-1'  >
-    <div className='toggle'><button onClick={filterHandler}>X</button></div>
     <FilteredSetting toggle={toggleFilter}/>
     </div>
     <div className='col-2'>
+    <div className='toggle'><button onClick={filterHandler}>X</button></div>
 
     { fetchMovies.length > 0 ? <Filtered data={fetchMovies} />  : 'loading .....'} 
 

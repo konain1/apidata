@@ -2,19 +2,37 @@
 
 /* MainContainer */
 
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 950px) {
     
     .maincontainer{
      display: flex;
-     justify-content: space-between;
+     /* justify-content: space-between; */
      width: 100%;
     }
    .col-1{
-    width: 25%;
+    width: 3%;
+    /* display: none; */
    }
    .col-2{
-    width: 70%;
+    width: 100%;
+
    }
+
+   .toggle button {
+    position: absolute;
+    font-size: 33px;
+    cursor: pointer;
+    top: 10px;
+    width: 40px;
+    background: unset;
+    border-radius: 15px;
+    border-color: azure;
+    top: 50%;
+    z-index: 100;
+    display: block;
+}
   
     
   }
@@ -23,7 +41,7 @@
   
   /* FilteredSetting */
   
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
       
     .filteredsetting{
   
@@ -35,11 +53,67 @@
        width: 30%;
        opacity: 0.6;
        display: grid;
-       /* display: none; */
+       display: none;
        grid-template-columns: 1fr;
        overflow-x: scroll;
     }
    
+  } */
+
+  @media screen and (max-width:850px) {
+    .filteredsetting{
+
+        height: 100vh;  
+        background-color: #222;
+        color: aliceblue;
+        border-radius: 15px;
+        position: fixed;
+        width: 60%;
+        opacity: 0.6;
+        display: flex;
+        /* display: none; */
+        overflow-x: scroll;
+        justify-content: space-around;
+        border: 1px solid white;
+        flex-direction: column;
+        z-index: 99;
+    }
+    .searchBox{
+        width: 100px;
+        align-items: center;
+        height: 20px;
+        text-align: center;
+        margin: 10px auto;
+        /* display: none; */
+    }
+    #inputSearchBox {
+        width: 70%;
+        height: 20px;
+        border-radius: 15px;
+        text-align: center;
+        border-radius: 10px;
+        background: #222;
+        border: 0.1px solid white;
+        color: white;
+        font-size: 4px;
+    
+    }
+    .mainbox{
+      
+        border: 1px solid white;
+         
+    }
+    .genreBox{
+        border: 1px solid white;
+        /* display: grid; */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        overflow-wrap:nowrap;
+        height: 50px;
+        width: 40px;
+        /* place-items: center; */
+        /* overflow: scroll;  */
+        border-radius: 4px;
+    }
   }
 
 
@@ -47,11 +121,11 @@
   @media screen and (max-width:600px) {
     .container {
       /* display: none; */
-      padding: 2rem 1rem;
+      padding: 2rem 0rem;
       display: grid;
       grid-template-columns: repeat(1,1fr);
       justify-content: space-around;
-      gap: 1rem;
+      /* gap: 1rem; */
       background-color: #959191;
       width: 100%;
     }

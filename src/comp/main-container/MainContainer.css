@@ -7,7 +7,6 @@
 }
 .toggle button {
     position: absolute;
-    left: 7%;
     font-size: 33px;
     cursor: pointer;
     top: 10px;
@@ -15,6 +14,8 @@
     background: unset;
     border-radius: 15px;
     border-color: azure;
+    top: 50%;
+    z-index: 100;
     display: none;
 }
 .toggle button:hover{
