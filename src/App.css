@@ -1,0 +1,46 @@
+
+
+/* MainContainer */
+
+@media screen and (max-width: 600px) {
+    
+    .maincontainer{
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+    }
+    .half-screen{
+     color: red;
+    }
+  
+    
+  }
+  
+  
+  
+  /* FilteredSetting */
+  
+  @media screen and (max-width: 600px) {
+      
+    .filteredsetting{
+  
+       height: 100vh;  
+       background-color: #222;
+       color: aliceblue;
+       border-radius: 15px;
+       position: fixed;
+       width: 30%;
+       opacity: 0.6;
+       display: grid;
+       /* display: none; */
+       grid-template-columns: 1fr;
+       overflow-x: scroll;
+    }
+   
+  }
+  
+  @media screen and (max-width:600px) {
+    .container {
+      /* display: none; */
+    }
+  }

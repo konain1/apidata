@@ -4,7 +4,7 @@ import React, { useMemo } from 'react'
 import './FilteredSetting.css'
 import { useSelector } from 'react-redux'
 
-function FilteredSetting() {
+function FilteredSetting({toggle}) {
   const allgenresData = useSelector(state => state.movieReducer.moviesData)
 
   const category = useMemo(() => {
@@ -18,7 +18,7 @@ function FilteredSetting() {
   console.log(category)
 return (
   <div>
-    <div className="filteredsetting">
+  {toggle === true ? <div className="filteredsetting">
       <div className='searchBox'>
         <div><h2>Search Movies</h2></div>
         <input type='text' placeholder='movieName' id='inputSearchBox' />
@@ -34,7 +34,8 @@ return (
       </div>
   </div>
      
-    </div>
+    </div>: <></> }
+    
   </div>
 );
 }

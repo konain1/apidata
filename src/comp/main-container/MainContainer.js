@@ -16,10 +16,11 @@ const url = 'https://api.tvmaze.com/shows'
 function MainContainer() {
 
      
-        const fetchMovies = useSelector(state=> state.movieReducer.moviesData)
+   const fetchMovies = useSelector(state=> state.movieReducer.moviesData)
 
     const dispatch = useDispatch();
 
+    const [toggleFilter,setToggleFilter] = useState(true)
 
     // const [data,setData] = useState([])
 
@@ -34,17 +35,21 @@ function MainContainer() {
   
 
     // console.log(fetchMovies)
+    const filterHandler = ()=>{
+      console.log('samurai x')
+    }
 
 
 
   return (
     <div className='maincontainer'>
-    <div className='col-1'>
-    <FilteredSetting/>
+    <div className='col-1'  >
+    <div className='toggle'><button onClick={filterHandler}>X</button></div>
+    <FilteredSetting toggle={toggleFilter}/>
     </div>
     <div className='col-2'>
 
-    { fetchMovies.length > 0 ? <Filtered data={fetchMovies}/>  : 'loading .....'} 
+    { fetchMovies.length > 0 ? <Filtered data={fetchMovies} />  : 'loading .....'} 
 
     </div>
 

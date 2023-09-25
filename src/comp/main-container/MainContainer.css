@@ -5,12 +5,23 @@
     grid-template-columns: 1fr 3fr;
     padding: unset;
 }
-
-
-@media screen and (max-width: 600px) {
-    
-   .maincontainer{
-    display: flex;
-    justify-content: center;
-   }
+.toggle button {
+    position: absolute;
+    left: 7%;
+    font-size: 33px;
+    cursor: pointer;
+    top: 10px;
+    width: 40px;
+    background: unset;
+    border-radius: 15px;
+    border-color: azure;
+    display: none;
 }
+.toggle button:hover{
+    transform: scale(1.2);
+    background-color: aliceblue;
+
+    color: red;
+}
+
+
