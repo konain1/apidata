@@ -61,6 +61,16 @@
   } */
 
   @media screen and (max-width:850px) {
+
+    @keyframes toggling {
+      0%{
+          left: -200px;
+  
+      }
+      100%{
+          left:0px;
+      }
+  }
     .filteredsetting{
 
         height: 100vh;  

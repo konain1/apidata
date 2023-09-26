@@ -15,6 +15,11 @@
 
     display: grid;
     place-content: center;
+    animation-name: toggling;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    
+
 }
 
 .searchBox{
