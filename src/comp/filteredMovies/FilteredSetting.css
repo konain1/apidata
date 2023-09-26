@@ -9,16 +9,13 @@
     background-color: #222;
     color: aliceblue;
     border-radius: 15px;
-   position: fixed;
-   width: 25%;
+    position: fixed;
+    width: 25%;
     opacity: 0.6;
-
+    
     display: grid;
     place-content: center;
-    animation-name: toggling;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    
+  
 
 }
 
