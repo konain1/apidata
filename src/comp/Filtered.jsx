@@ -1,55 +1,40 @@
+import React, { useState, useEffect } from 'react';
+import DataCard from './DataCard';
+import { useSelector, useDispatch } from 'react-redux';
+import { getGenreRedcure } from '../featuresSlice/DataSlice';
 
-import React from 'react'
-import {useState,useEffect} from 'react'
-import DataCard from './DataCard'
-import { useSelector,useDispatch } from 'react-redux'
-import { getGenreRedcure } from '../featuresSlice/DataSlice'
+function Filtered({ data }) {
+  const [movies, setMovies] = useState(data);
+  const [rating, setRating] = useState(1);
 
-function Filtered({data}) {
+  const gen = useSelector((state) => state.movieReducer.getGenreMovies);
+  const dispatch = useDispatch();
 
-    const [movies,setMovies] = useState([])
-    const [genre,setGenre] = useState('')
-    const [rating,setRating] = useState(1)
+  useEffect(() => {
+    ratingData();
+  }, [gen, data]);
 
-  const gen = useSelector(state=>state.movieReducer. getGenreMovies)
+  const ratingData = () => {
+    const filteredMovies = data.filter((movie) => movie.rating.average > rating);
+    const genreFilteredMovies =
+      gen !== ''
+        ? data.filter(
+            (item) =>
+              item.genres.includes(gen) ||
+              item.genres.includes(gen) ||
+              item.genres.includes(gen)
+          )
+        : data;
 
-    const dispatch = useDispatch()
+    setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies);
+  };
+ 
 
-    useEffect(()=>{
-        ratingData()
-    })
-    
-
-
-    const ratingData = ()=>{
-        // dispatch(getGenreRedcure(''))
-        let moviesData = data.filter((movie)=>{
-            return movie.rating.average > rating;
-        })
-
-        if(gen !== ''){
-          let allFiltered = moviesData.filter((item)=>{
-             return item.genres[0] === gen || item.genres[1] === gen || item.genres[2] === gen
-         })
-         setMovies(allFiltered)
-        }else{
-            setMovies(moviesData)
-        }
-    
-   }
-       
-
-       
-  
-   console.log(gen.length)
-   
   return (
     <div>
       <DataCard data={movies} />
-
-   
     </div>
-  )
+  );
 }
 
-export default Filtered
+export default Filtered;

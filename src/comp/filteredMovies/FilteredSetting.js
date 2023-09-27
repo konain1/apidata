@@ -6,12 +6,12 @@ import { getGenreRedcure } from '../../featuresSlice/DataSlice';
 function FilteredSetting({ toggle }) {
   const allgenresData = useSelector((state) => state.movieReducer.moviesData);
 
-  // const gen = useSelector(state=>state.movieReducer. getGenreMovies)
+  const gen = useSelector(state=>state.movieReducer. getGenreMovies)
 
   const dispatch = useDispatch();
 
   const category = useMemo(() => {
-    
+
     const uniqueGenres = new Set();
     allgenresData.forEach((item) => {
       uniqueGenres.add(item.genres[1]);
@@ -24,10 +24,14 @@ function FilteredSetting({ toggle }) {
   const filteredSettingClass = toggle ? 'filteredsetting active' : 'filteredsetting';
 
   const getGenre =(event)=>{
-    // console.log(event.target.innerText)
     dispatch(getGenreRedcure(event.target.innerText))
   }
 
+  const resetFilters = () => {
+    dispatch(getGenreRedcure('')); // Reset genre selection
+  };
+
+  
   return (
     <div>
       <div className={filteredSettingClass}>
@@ -45,7 +49,7 @@ function FilteredSetting({ toggle }) {
           
         </div>
         <div className='mainbox'>
-          <h2>Genre</h2>
+        <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>
           <div className='genreBox'>
             {category.map((genre, key) => {
               if(genre !== undefined){
