@@ -31,7 +31,9 @@ function FilteredSetting({ toggle }) {
           <h2>Genre</h2>
           <div className='genreBox'>
             {category.map((genre, key) => {
+              if(genre !== undefined){
               return <button key={key}>{genre}</button>;
+              }
             })}
           </div>
         </div>
