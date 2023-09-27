@@ -2,6 +2,8 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import DataCard from './DataCard'
+import { useSelector,useDispatch } from 'react-redux'
+import { getGenreRedcure } from '../featuresSlice/DataSlice'
 
 function Filtered({data}) {
 
@@ -9,24 +11,25 @@ function Filtered({data}) {
     const [genre,setGenre] = useState('')
     const [rating,setRating] = useState(1)
 
+  const gen = useSelector(state=>state.movieReducer. getGenreMovies)
 
-
-    
+    const dispatch = useDispatch()
 
     useEffect(()=>{
         ratingData()
-    },[data])
-   
+    })
+    
+
 
     const ratingData = ()=>{
-
+        // dispatch(getGenreRedcure(''))
         let moviesData = data.filter((movie)=>{
             return movie.rating.average > rating;
         })
 
-        if(genre !== ''){
+        if(gen !== ''){
           let allFiltered = moviesData.filter((item)=>{
-             return item.genres[0] === genre || item.genres[1] === genre || item.genres[2] === genre
+             return item.genres[0] === gen || item.genres[1] === gen || item.genres[2] === gen
          })
          setMovies(allFiltered)
         }else{
@@ -38,12 +41,11 @@ function Filtered({data}) {
 
        
   
-   
+   console.log(gen.length)
    
   return (
     <div>
-    
-    <DataCard data={movies} />
+      <DataCard data={movies} />
 
    
     </div>

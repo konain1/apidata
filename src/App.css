@@ -10,6 +10,8 @@
      display: flex;
      /* justify-content: space-between; */
      width: 100%;
+     padding: 0;
+     margin: 0;
     }
    .col-1{
     width: 3%;
@@ -45,50 +47,78 @@
 
   @media screen and (max-width:850px) {
     .filteredsetting.active {
-      width: 60%; /* Adjust the width as per your requirement when toggle is true */
+      width: 60%;
+    z-index: 99;
     }
     .filteredsetting {
-      /* Other styles for the element */
       width: 0; /* Initial width when toggle is false */
       transition: width 0.5s ease; /* Add a smooth transition for the width property */
     }
 
-   
-    .searchBox{
-        width: 100px;
+    .filteredsetting .searchBox{
+      width: 0; /* Initial width when toggle is false */
+      transition: width 0.5s ease;
+      display: none;
+    }
+    .filteredsetting.active .searchBox{
         align-items: center;
-        height: 20px;
+        height: 100px;
+        width: 100%;
         text-align: center;
         margin: 10px auto;
         /* display: none; */
+        border: 1px solid white;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 30px;
+        position: absolute;
     }
     #inputSearchBox {
-        width: 70%;
-        height: 20px;
+        width: 100px;
+        height: 10px;
         border-radius: 15px;
         text-align: center;
         border-radius: 10px;
         background: #222;
-        border: 0.1px solid white;
         color: white;
         font-size: 4px;
-    
+       
+    }
+
+    .searchBtn{
+      width: 50px;
+      font-size: 8px;
+      text-align: center;
+    }
+    h2{
+      display: none;
     }
     .mainbox{
       
         border: 1px solid white;
-         
+        width: 100%;
+        height: 100%;
+       
     }
     .genreBox{
         border: 1px solid white;
-        /* display: grid; */
+        display: grid;
         /* grid-template-columns: 1fr 1fr 1fr; */
         overflow-wrap:nowrap;
-        height: 50px;
-        width: 40px;
+        height: 500px;
+        width: 100%;
         /* place-items: center; */
         /* overflow: scroll;  */
         border-radius: 4px;
+        position: absolute;
+
+    }
+    .genreBox button{
+      width: 40px;
+      height: 40px;
+      font-size: 8px;
     }
   }
 
