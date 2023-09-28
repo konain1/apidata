@@ -22,7 +22,6 @@ function MainContainer() {
 
     const [toggleFilter,setToggleFilter] = useState(true)
 
-    // const [data,setData] = useState([])
 
     useEffect(()=>{
       axios.get(url).then(res => {
@@ -34,9 +33,8 @@ function MainContainer() {
   
   
 
-    // console.log(fetchMovies)
     const filterHandler = ()=>{
-      console.log('samurai x')
+      console.log('toggle')
       setToggleFilter(!toggleFilter)
     }
 
@@ -50,9 +48,19 @@ function MainContainer() {
     <div className='col-2'>
     <div className='toggle'><button onClick={filterHandler}>X</button></div>
 
-    { fetchMovies.length > 0 ? <Filtered data={fetchMovies} />  : 'loading .....'} 
+    {/* { fetchMovies.length > 0 ? <Filtered data={fetchMovies} />  : 'loading .....'}  */}
+
+    {fetchMovies.length > 0 ? (
+      <Filtered key="filtered-component" data={fetchMovies} />
+    ) : (
+      'loading .....'
+    )}
 
     </div>
+
+    <div className="pagination">
+            {}
+          </div>
 
     </div>
   )

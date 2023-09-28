@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import DataCard from './DataCard';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getGenreRedcure } from '../featuresSlice/DataSlice';
-
+import { useMemo } from 'react';
 function Filtered({ data }) {
   const [movies, setMovies] = useState(data);
   const [rating, setRating] = useState(1);
+  const [pageNo,setPageNo] = useState(data.length)
+
 
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
-  const dispatch = useDispatch();
+//   const dispatch = useDispatch();
 
   useEffect(() => {
-    ratingData();
+    ratingAndGenreData();
   }, [gen, data]);
 
-  const ratingData = () => {
+  const ratingAndGenreData = () => {
     const filteredMovies = data.filter((movie) => movie.rating.average > rating);
-    const genreFilteredMovies =
-      gen !== ''
+    const genreFilteredMovies = gen !== ''
         ? data.filter(
             (item) =>
               item.genres.includes(gen) ||
@@ -27,8 +28,17 @@ function Filtered({ data }) {
         : data;
 
     setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies);
+    
   };
- 
+  
+  
+  
+  useMemo(()=>{
+    // let page = Math.floor(movies.length /10);
+    setPageNo(movies.length)
+  },[movies])
+
+//   console.log(pageNo)
 
   return (
     <div>
