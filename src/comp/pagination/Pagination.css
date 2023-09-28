@@ -1,0 +1,8 @@
+
+
+.pageDiv{
+    width: 1000px;
+    overflow-x: scroll;
+    border: 1px solid black;
+
+}

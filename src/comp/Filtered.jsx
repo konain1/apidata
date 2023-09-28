@@ -3,10 +3,16 @@ import DataCard from './DataCard';
 import { useSelector } from 'react-redux';
 import { getGenreRedcure } from '../featuresSlice/DataSlice';
 import { useMemo } from 'react';
+import Pagination from './pagination/Pagination';
+
+
+
+
+
 function Filtered({ data }) {
   const [movies, setMovies] = useState(data);
   const [rating, setRating] = useState(1);
-  const [pageNo,setPageNo] = useState(data.length)
+  // const [pageNo,setPageNo] = useState()
 
 
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
@@ -33,16 +39,17 @@ function Filtered({ data }) {
   
   
   
-  useMemo(()=>{
-    // let page = Math.floor(movies.length /10);
-    setPageNo(movies.length)
-  },[movies])
+  // useMemo(()=>{
+  //   // let page = Math.floor(movies.length /10);
+  //   setPageNo(movies.length)
+  // },[movies])
 
 //   console.log(pageNo)
 
   return (
     <div>
       <DataCard data={movies} />
+      <Pagination pageNo={movies} />
     </div>
   );
 }

@@ -58,9 +58,6 @@ function MainContainer() {
 
     </div>
 
-    <div className="pagination">
-            {}
-          </div>
 
     </div>
   )
