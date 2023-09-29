@@ -1,10 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./DataCard.css";
 import { AiOutlineStar } from "react-icons/ai";
 import { useSelector } from 'react-redux';
 
 function DataCard({ data }) {
-  const pageindex = useSelector(state => state.movieReducer.pageindex);
+  let pageindex = useSelector(state => state.movieReducer.pageindex);
+  
+const [idx,setIdx] = useState(1)
+
+useEffect(()=>{
+  setIdx(1)
+  
+},[data])
+
+useEffect(()=>{
+  setIdx(pageindex)
+  
+},[pageindex])
+
+useEffect(()=>{
+  console.log(idx * 10 ,idx * 10 + 10)
+  console.log(data.slice(idx * 10 ,idx * 10 + 10).length + '----------')
+
+},[idx])
+
   const [isHovering, setIsHovering] = useState(false);
   const [itemId, setItemId] = useState();
 
@@ -18,12 +37,14 @@ function DataCard({ data }) {
     setItemId("");
   };
 
+  
+
   return (
     <>
       {data ? (
         
         <div className="container">
-          {data.slice(pageindex, pageindex + 10).map((item) => {
+          {data.slice((idx-1) * 10 ,(idx-1) * 10 + 10).map((item) => {
             return (
               <div
                 className="poster"

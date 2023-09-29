@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getGenreRedcure } from '../../featuresSlice/DataSlice';
 
 function FilteredSetting({ toggle }) {
+  
   const allgenresData = useSelector((state) => state.movieReducer.moviesData);
   const gen = useSelector(state => state.movieReducer.getGenreMovies);
   const dispatch = useDispatch();

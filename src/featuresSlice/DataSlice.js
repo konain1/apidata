@@ -5,11 +5,12 @@ import { createSlice} from '@reduxjs/toolkit'
 const initialState = {
     moviesData:[],
     pageindex:0,
-    getGenreMovies:[]
+    getGenreMovies:[],
 }
 
+
 const dataSlice = createSlice({
-    
+   
     name:'dataSlice',
     initialState,
     reducers:{

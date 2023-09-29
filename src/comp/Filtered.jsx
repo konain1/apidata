@@ -20,6 +20,8 @@ function Filtered({ data }) {
 
   useEffect(() => {
     ratingAndGenreData();
+    console.log(gen)
+
   }, [gen, data]);
 
   const ratingAndGenreData = () => {
@@ -33,23 +35,19 @@ function Filtered({ data }) {
           )
         : data;
 
+        console.log(genreFilteredMovies)
     setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies);
     
   };
   
   
   
-  // useMemo(()=>{
-  //   // let page = Math.floor(movies.length /10);
-  //   setPageNo(movies.length)
-  // },[movies])
-
-//   console.log(pageNo)
+  
 
   return (
     <div>
       <DataCard data={movies} />
-      <Pagination pageNo={movies} />
+      <Pagination moviesList={movies} />
     </div>
   );
 }
