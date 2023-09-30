@@ -8,7 +8,7 @@ function Pagination({ moviesList }) {
   const [index, setIndex] = useState(1);
 
   const dispatch = useDispatch()
-  const pageSelector = useSelector(state=>state.movieReducer.pageindex)
+  // const pageSelector = useSelector(state=>state.movieReducer.pageindex)
 
   // console.log(pageSelector)
 

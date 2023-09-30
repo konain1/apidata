@@ -6,24 +6,36 @@
 
 @media screen and (max-width: 950px) {
     
+  
+  
     .maincontainer{
-     display: flex;
-     /* justify-content: space-between; */
-     width: 100%;
-     padding: 0;
-     margin: 0;
+    
+     
+      width: 100%;
+      /* Remove overflow-x: hidden; */
+      display: flex;
+      justify-content: center;
+      margin: 0 10px;
+      position: relative;
+
     }
+
+
+   
    .col-1{
     width: 3%;
     /* display: none; */
+    /* overflow-x:scroll; */
+    
    }
+   
    .col-2{
     width: 100%;
 
    }
 
    .toggle button {
-    position: absolute;
+    position: fixed;
     font-size: 33px;
     cursor: pointer;
     top: 10px;
@@ -35,9 +47,9 @@
     z-index: 100;
     display: block;
 }
-  
+}
     
-  }
+  
   
   
   
@@ -47,19 +59,21 @@
 
   @media screen and (max-width:850px) {
     .filteredsetting.active {
-      width: 60%;
-    z-index: 99;
+      width: 70%;
+      z-index: 99;
+      transition: width 0.5s linear; /* Add a smooth transition for the width property */
     }
     .filteredsetting {
       width: 0; /* Initial width when toggle is false */
-      transition: width 0.5s ease; /* Add a smooth transition for the width property */
+      transition: width 0.5s linear; /* Add a smooth transition for the width property */
     }
 
     .filteredsetting .searchBox{
       width: 0; /* Initial width when toggle is false */
-      transition: width 0.5s ease;
+      transition: width 0.5s linear;
       display: none;
     }
+   
     
     .filteredsetting.active .searchBox{
         align-items: center;
@@ -67,14 +81,13 @@
         width: 100%;
         text-align: center;
         margin: 10px auto;
-        /* display: none; */
         border: 1px solid white;
         flex-direction: column;
         display: flex;
         align-items: center;
         justify-content: center;
         top: 30px;
-        position: absolute;
+        /* position: absolute; */
     }
     #inputSearchBox {
         width: 100px;
@@ -85,7 +98,6 @@
         background: #222;
         color: white;
         font-size: 4px;
-       
     }
 
     .searchBtn{
@@ -106,18 +118,16 @@
     .genreBox{
         border: 1px solid white;
         display: grid;
-        /* grid-template-columns: 1fr 1fr 1fr; */
         overflow-wrap:nowrap;
-        height: 500px;
+        height: 400px;
         width: 100%;
-        /* place-items: center; */
-        /* overflow: scroll;  */
+      
         border-radius: 4px;
         position: absolute;
 
     }
     .genreBox button{
-      width: 100px;
+      width: 40px;
       height: 40px;
       font-size: 8px;
     }
@@ -125,9 +135,10 @@
       width: 100px;
       height: 40px;
       font-size: 12px;
-      top: 20%;
+      bottom: 5%;
       position: absolute;
       background-color: red;
+      z-index: 100;
 
     }
 
@@ -138,12 +149,11 @@
   /* DataCard */
   @media screen and (max-width:600px) {
     .container {
-      /* display: none; */
-      padding: 2rem 0rem;
+     
+      overflow-x: hidden;
       display: grid;
       grid-template-columns: repeat(1,1fr);
       justify-content: space-around;
-      /* gap: 1rem; */
       background-color: #959191;
       width: 100%;
     }

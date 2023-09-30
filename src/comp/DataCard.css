@@ -1,19 +1,19 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 .container {
-    /* border: 1px solid black; */
-    /* margin: 5rem auto; */
+  
     padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-content: space-around;
     gap: 5rem;
+    min-height: 100vh;
+} */
 
-}
-.poster{
+/* .poster{
     display: flex;
     justify-content: center;
     height: 350px;
@@ -28,24 +28,20 @@
 .poster:hover {
     transform: rotate(5deg);
 
-}
-.poster-img {
+} */
+
+
+/* .poster-img {
     transform: rotate(3deg);
     transition: 0.2s ease-in 0.5ms;
     height: 100%;
     width: 100%;
     border-radius: 15px;
-    /* display: none; */
    
 
-}
-/* .poster-img:hover{
-    background: transparent ;
 } */
-/* .no-poster {
-    display: none;
-} */
-.poster-title{
+
+/* .poster-title{
     color: aliceblue;
     font-family: 'Aclonica', sans-serif;
     margin: 10px 10px;
@@ -54,13 +50,9 @@
     align-items: center;
 
 }
+ */
 
-/* .poster-img:hover{
-    transform: rotate(0deg);
-
-
-} */
-.genres {
+/* .genres {
     font-size: 8px;
     margin: 10px 10px;
     gap: 2rem;
@@ -72,9 +64,9 @@
 }
 .Desc{
     display: block;
-}
+} */
 
-.hidden{
+/* .hidden{
     display: none;
 }
 
@@ -84,6 +76,7 @@
     left: 0;
     z-index: 99;
 }
+ */
 
 
 
@@ -93,16 +86,14 @@
 
 
 
-
-/* media query */
-
+/* 
 @media screen and (max-width:1200px) {
     
     .container{
         display: grid;
         grid-template-columns: 1fr 1fr;
         overflow: hidden;
-
+        min-height: 100vh;
     }
     .poster{
         width: 250px;
@@ -127,4 +118,131 @@
     .poster-title{
         font-size: 8px;
     }
-}
+} */
+
+
+
+
+
+
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    /* border: 1px solid black; */
+    /* margin: 5rem auto; */
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+    gap: 5rem;
+    min-height: 100vh;
+  }
+  
+  .poster {
+    display: flex;
+    justify-content: center;
+    height: 370px; /* Set a fixed height */
+    width: 370px; /* Set a fixed width */
+    margin: 0 auto; /* Center horizontally */
+    border-radius: 15px;
+    background: #222;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .poster:hover {
+    transform: rotate(5deg);
+  }
+  
+  .poster-img {
+    transform: rotate(3deg);
+    transition: 0.2s ease-in 0.5ms;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    /* display: none; */
+  }
+  
+  .poster-title {
+    color: aliceblue;
+    font-family: 'Aclonica', sans-serif;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .genres {
+    font-size: 8px;
+    margin: 10px 10px;
+    gap: 2rem;
+  }
+  
+  .desc {
+    display: flex;
+    justify-content: center;
+    display: none;
+  }
+  
+  .Desc {
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .databaseIcon {
+    font-size: 50px;
+    position: absolute;
+    left: 0;
+    z-index: 99;
+  }
+  
+  /* media query for tablets */
+  @media screen and (max-width: 1200px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      min-height: 100vh;
+      gap: 2rem; /* Adjust the gap between items */
+    }
+    .poster {
+      width: 370px; /* Set a fixed width */
+      height: 370px; /* Set a fixed height */
+      margin: 0 auto; /* Center the posters */
+    }
+    .poster-title {
+      font-size: 12px;
+    }
+  }
+  
+  /* media query for mobile phones */
+  @media screen and (max-width: 600px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+      gap: 1rem; /* Adjust the gap between items */
+    }
+    .poster {
+      width: 370px; /* Set a fixed width */
+      height: 370px; /* Set a fixed height */
+      margin: 0 auto; /* Center the posters */
+    }
+    .poster-title {
+      font-size: 8px;
+    }
+  }
+  

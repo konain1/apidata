@@ -18,11 +18,7 @@ useEffect(()=>{
   
 },[pageindex])
 
-useEffect(()=>{
-  console.log(idx * 10 ,idx * 10 + 10)
-  console.log(data.slice(idx * 10 ,idx * 10 + 10).length + '----------')
 
-},[idx])
 
   const [isHovering, setIsHovering] = useState(false);
   const [itemId, setItemId] = useState();
