@@ -12,27 +12,11 @@
     
      
       width: 100%;
-      /* Remove overflow-x: hidden; */
-      display: flex;
-      justify-content: center;
-      margin: 0 10px;
+      overflow-x: hidden;
       position: relative;
-
+      display: flex;
+     
     }
-
-
-   
-   .col-1{
-    width: 3%;
-    /* display: none; */
-    /* overflow-x:scroll; */
-    
-   }
-   
-   .col-2{
-    width: 100%;
-
-   }
 
    .toggle button {
     position: fixed;
@@ -46,6 +30,13 @@
     top: 50%;
     z-index: 100;
     display: block;
+
+}
+
+.col-1 {
+  position: absolute;
+  width: 200%;
+  height: 100vh;
 }
 }
     
@@ -57,13 +48,24 @@
   
  
 
-  @media screen and (max-width:850px) {
+  @media screen and (max-width:950px) {
     .filteredsetting.active {
-      width: 70%;
-      z-index: 99;
+      width: 100%;
       transition: width 0.5s linear; /* Add a smooth transition for the width property */
+      /* position: absolute; */
+      z-index: 90;
+      top: 40px;
+      height: 90vh;
+      border-radius: 0 0 50% 0;
+      position: absolute;
     }
     .filteredsetting {
+      z-index: 90;
+      top: 40px;
+      height: 90vh;
+      border-radius: 0 0 50% 0;
+      position: absolute;
+
       width: 0; /* Initial width when toggle is false */
       transition: width 0.5s linear; /* Add a smooth transition for the width property */
     }
@@ -88,6 +90,7 @@
         justify-content: center;
         top: 30px;
         /* position: absolute; */
+        display: none;
     }
     #inputSearchBox {
         width: 100px;
@@ -121,7 +124,7 @@
         overflow-wrap:nowrap;
         height: 400px;
         width: 100%;
-      
+      display: none;
         border-radius: 4px;
         position: absolute;
 
