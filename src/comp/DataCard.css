@@ -246,3 +246,17 @@
     }
   }
   
+
+  .nextPrev{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+
+  }
+  .nextPrev button {
+    padding:10px;
+    border-radius: 10px;
+    background: unset;
+    font-size: 12px;
+    
+  }

@@ -100,9 +100,9 @@ useEffect(()=>{
         "waiting..."
       )}
 
-      <div>
-        {idx > 1 ? <button onClick={(e)=>nextHandler(idx-1)}>Prev</button> : ''}
-        {idx < (data.length / 10) ? <button onClick={(e)=>nextHandler(idx+1)}>nexttt</button> : ''}
+      <div className="nextPrev">
+        {idx > 1 ? <button onClick={(e)=>nextHandler(idx-1)}>PREV</button> : ''}
+        {idx < (data.length / 10) ? <button onClick={(e)=>nextHandler(idx+1)}>NEXT</button> : ''}
          
 
      </div>

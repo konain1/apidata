@@ -33,7 +33,7 @@
 @media screen and (max-width:950px) {
     
     .pageDiv{
-     
+     display: none;
     }
     .pageDiv button {
         width: 10px;

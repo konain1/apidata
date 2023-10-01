@@ -17,20 +17,19 @@ function Pagination({ moviesList }) {
 
   }, [moviesList]);
 
-  const PageIndexHandler = (e)=>{
+  const PageIndexHandler = (key,e)=>{
     
-    dispatch(pagination(e))
-
+    dispatch(pagination(key))
+    const currentButton = e.target;
     // setIndex(e)
-
+    console.log(currentButton)
   }
   
   return (
     <div className="pageDiv">
       {Array.from({ length: index}, (_, key) => (
-        <button onClick={(e)=>PageIndexHandler(key+1)} key={key}>{key + 1}</button>
+        <button onClick={(e)=>PageIndexHandler(key+1,e)} key={key}>{key + 1}</button>
       ))}
-      <button>next</button>
     </div>
   );
 }
