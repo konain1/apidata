@@ -29,3 +29,18 @@
     color: white;
     background-color: #222;
 }
+
+@media screen and (max-width:950px) {
+    
+    .pageDiv{
+     
+    }
+    .pageDiv button {
+        width: 10px;
+        height: 10px;
+        outline: none;
+        padding: 10px;
+        text-align: center;
+        font-size: 8px;
+    }
+}

@@ -30,6 +30,7 @@ function Pagination({ moviesList }) {
       {Array.from({ length: index}, (_, key) => (
         <button onClick={(e)=>PageIndexHandler(key+1)} key={key}>{key + 1}</button>
       ))}
+      <button>next</button>
     </div>
   );
 }

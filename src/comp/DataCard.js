@@ -33,8 +33,13 @@ useEffect(()=>{
     setItemId("");
   };
 
-  
+  const nextHandler = (next)=>{
 
+    setIdx(next)
+
+  }
+
+  console.log(idx)
   return (
     <>
       {data ? (
@@ -77,9 +82,9 @@ useEffect(()=>{
                   ) : null}
                 </>
 
-
-
+                   
               </div>
+              
             );
           })}
 
@@ -94,6 +99,14 @@ useEffect(()=>{
       ) : (
         "waiting..."
       )}
+
+      <div>
+        {idx > 1 ? <button onClick={(e)=>nextHandler(idx-1)}>Prev</button> : ''}
+        {idx < (data.length / 10) ? <button onClick={(e)=>nextHandler(idx+1)}>nexttt</button> : ''}
+         
+
+     </div>
+
     </>
   );
 }
