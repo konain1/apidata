@@ -7,7 +7,7 @@
     justify-content: center;
     /* overflow: scroll; */
     align-content: center;
-    margin: 10px auto;
+    margin: 30px auto;
     position: relative;
 
 
@@ -19,4 +19,13 @@
     outline: none;
     padding: 10px;
     text-align: center;
+}
+.pageDiv button:focus{
+    background-color: #222;
+    color: white;
+    opacity: 0.7;
+}
+.pageDiv button:hover{
+    color: white;
+    background-color: #222;
 }
