@@ -1,8 +1,22 @@
 
 
 .pageDiv{
-    width: 1000px;
-    overflow-x: scroll;
-    border: 1px solid black;
+    width: 50vw;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    /* overflow: scroll; */
+    align-content: center;
+    margin: 10px auto;
+    position: relative;
 
+
+}
+
+.pageDiv button {
+    width: 40px;
+    height: 40px;
+    outline: none;
+    padding: 10px;
+    text-align: center;
 }

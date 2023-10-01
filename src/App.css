@@ -53,7 +53,7 @@
   @media screen and (max-width:950px) {
     .filteredsetting.active {
       width: 100%;
-      transition: width 0.5s linear; /* Add a smooth transition for the width property */
+      transition: width 0.7s linear; /* Add a smooth transition for the width property */
       /* position: absolute; */
       z-index: 90;
       top: 40px;
@@ -69,7 +69,7 @@
       position: absolute;
 
       width: 0; /* Initial width when toggle is false */
-      transition: width 0.5s linear; /* Add a smooth transition for the width property */
+      transition: width 0.7s linear; /* Add a smooth transition for the width property */
     }
 
     .filteredsetting .searchBox{
