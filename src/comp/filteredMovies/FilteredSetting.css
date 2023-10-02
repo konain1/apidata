@@ -21,12 +21,33 @@
 .searchBox{
     width: 20vw;
     align-items: center;
-    height: 10vh;
+    height: 20vh;
     text-align: center;
     margin: 10px auto;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
     
 }
+.search-result::-webkit-scrollbar{
+    display: none;
+}
+.search-result{
+    overflow-y: scroll;
+    height: 20vh;
+    padding: 10px;
 
+}
+ul {
+    list-style: none;
+
+}
+.searchLis{
+    cursor: pointer;
+    font-size: 18px;
+}
 #inputSearchBox {
     width: 70%;
     height: 30px;

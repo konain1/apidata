@@ -55,12 +55,12 @@ function FilteredSetting({ toggle }) {
             onChange={handleSearchChange}
           />
           <button className='searchBtn'>Search</button>
-          <div>
-            <h2>Search Results:</h2>
+          <div className='search-result'>
+            {/* <h2>Search Results:</h2> */}
             {searchResults.length > 0 ? (
               <ul>
                 {searchResults.map((result) => (
-                  <li key={result.id}>{result.name}</li>
+                  <li className='searchLis' key={result.id}>{result.name}</li>
                 ))}
               </ul>
             ) : (
