@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import './FilteredSetting.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGenreRedcure } from '../../featuresSlice/DataSlice';
@@ -6,8 +6,12 @@ import { getGenreRedcure } from '../../featuresSlice/DataSlice';
 function FilteredSetting({ toggle }) {
   
   const allgenresData = useSelector((state) => state.movieReducer.moviesData);
+
   const gen = useSelector(state => state.movieReducer.getGenreMovies);
+
   const dispatch = useDispatch();
+  
+  const [searchResults, setSearchResults] = useState([]);
 
   const category = useMemo(() => {
     const uniqueGenres = new Set();
@@ -27,6 +31,16 @@ function FilteredSetting({ toggle }) {
     dispatch(getGenreRedcure('')); // Reset genre selection
   };
 
+  const searchMovie = (query) => {
+    const results = allgenresData.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+     query === '' ? setSearchResults([]) : setSearchResults(results);
+  };
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    searchMovie(query)
+  };
+
   return (
     <div>
       <div className={filteredSettingClass}>
@@ -34,8 +48,25 @@ function FilteredSetting({ toggle }) {
           <div>
             <h2>Searching...</h2>
           </div>
-          <input type='text' placeholder='movie Name' id='inputSearchBox' />
+          <input
+            type='text'
+            placeholder='Movie Name'
+            id='inputSearchBox'
+            onChange={handleSearchChange}
+          />
           <button className='searchBtn'>Search</button>
+          <div>
+            <h2>Search Results:</h2>
+            {searchResults.length > 0 ? (
+              <ul>
+                {searchResults.map((result) => (
+                  <li key={result.id}>{result.name}</li>
+                ))}
+              </ul>
+            ) : (
+              <p></p>
+            )}
+          </div>
         </div>
         <div className='mainbox'>
           <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>

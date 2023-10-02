@@ -21,6 +21,8 @@
     padding: 10px;
     text-align: center;
     margin: 0px 5px;
+    border-radius: 10px;
+
 }
 .pageDiv button:focus{
     background-color: #222;
