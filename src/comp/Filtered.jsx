@@ -16,11 +16,11 @@ function Filtered({ data }) {
 
 
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
-//   const dispatch = useDispatch();
+  const searchedItem = useSelector(state=> state.movieReducer.SearchMovieStored)
 
   useEffect(() => {
     ratingAndGenreData();
-    console.log(gen)
+    console.log(searchedItem)
 
   }, [gen, data]);
 
@@ -36,7 +36,7 @@ function Filtered({ data }) {
         : data;
 
         console.log(genreFilteredMovies)
-    setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies);
+      setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies);
     
   };
   

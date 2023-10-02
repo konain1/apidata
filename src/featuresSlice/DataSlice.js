@@ -6,6 +6,7 @@ const initialState = {
     moviesData:[],
     pageindex:0,
     getGenreMovies:[],
+    SearchMovieStored:''
 }
 
 
@@ -23,9 +24,12 @@ const dataSlice = createSlice({
         },
         getGenreRedcure:(state,action)=>{
             state.getGenreMovies = action.payload
+        },
+        setSeacrhedMovie:(state,action)=>{
+            state.SearchMovieStored = action.payload
         }
     }
 })
 
-export const {addMovies,pagination,getGenreRedcure} = dataSlice.actions;
+export const {addMovies,pagination,getGenreRedcure,setSeacrhedMovie} = dataSlice.actions;
 export default dataSlice.reducer;

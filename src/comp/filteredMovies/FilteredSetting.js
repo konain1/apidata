@@ -1,25 +1,21 @@
 import React, { useMemo, useState } from 'react';
 import './FilteredSetting.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getGenreRedcure } from '../../featuresSlice/DataSlice';
+import { getGenreRedcure, setSeacrhedMovie } from '../../featuresSlice/DataSlice';
 
 function FilteredSetting({ toggle }) {
-  
-  const allgenresData = useSelector((state) => state.movieReducer.moviesData);
-
-  const gen = useSelector(state => state.movieReducer.getGenreMovies);
-
+  const allGenresData = useSelector((state) => state.movieReducer.moviesData);
   const dispatch = useDispatch();
-  
   const [searchResults, setSearchResults] = useState([]);
+  const [finalizedMovie, setFinalizedMovie] = useState('');
 
   const category = useMemo(() => {
     const uniqueGenres = new Set();
-    allgenresData.forEach((item) => {
+    allGenresData.forEach((item) => {
       uniqueGenres.add(item.genres[1]);
     });
     return Array.from(uniqueGenres);
-  }, [allgenresData]);
+  }, [allGenresData]);
 
   const filteredSettingClass = toggle ? 'filteredsetting active' : 'filteredsetting';
 
@@ -29,16 +25,31 @@ function FilteredSetting({ toggle }) {
 
   const resetFilters = () => {
     dispatch(getGenreRedcure('')); // Reset genre selection
+    dispatch(setSeacrhedMovie(''));
+
   };
 
   const searchMovie = (query) => {
-    const results = allgenresData.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
-     query === '' ? setSearchResults([]) : setSearchResults(results);
+    const results = allGenresData.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+    setSearchResults(query === '' ? [] : results);
   };
 
   const handleSearchChange = (event) => {
+    dispatch(setSeacrhedMovie(''));
     const query = event.target.value;
-    searchMovie(query)
+    searchMovie(query);
+  };
+
+  const setSeachInBox = (event) => {
+    const val = event.target.innerText;
+    setFinalizedMovie(val);
+    document.getElementById('inputSearchBox').value = val;
+    setSearchResults([]);
+  };
+
+  const gotThatMovie = () => {
+    console.log(finalizedMovie);
+    dispatch(setSeacrhedMovie(finalizedMovie));
   };
 
   return (
@@ -54,13 +65,12 @@ function FilteredSetting({ toggle }) {
             id='inputSearchBox'
             onChange={handleSearchChange}
           />
-          <button className='searchBtn'>Search</button>
+          <button className='searchBtn' onClick={gotThatMovie}>Search</button>
           <div className='search-result'>
-            {/* <h2>Search Results:</h2> */}
             {searchResults.length > 0 ? (
               <ul>
                 {searchResults.map((result) => (
-                  <li className='searchLis' key={result.id}>{result.name}</li>
+                  <li onClick={(e) => setSeachInBox(e)} className='searchLis' key={result.id}>{result.name}</li>
                 ))}
               </ul>
             ) : (
@@ -79,7 +89,7 @@ function FilteredSetting({ toggle }) {
                   </button>
                 );
               }
-              return null; // Return null for the undefined genres to avoid rendering them
+              return null;
             })}
           </div>
         </div>

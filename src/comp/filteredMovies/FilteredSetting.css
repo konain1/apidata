@@ -47,7 +47,13 @@ ul {
 .searchLis{
     cursor: pointer;
     font-size: 18px;
+    padding-top: 4px;
 }
+.searchLis:hover{
+    /* background-color: #555; */
+    color: orange;
+}
+
 #inputSearchBox {
     width: 70%;
     height: 30px;
