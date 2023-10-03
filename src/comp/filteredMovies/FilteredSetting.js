@@ -50,6 +50,8 @@ function FilteredSetting({ toggle }) {
   const gotThatMovie = () => {
     console.log(finalizedMovie);
     dispatch(setSeacrhedMovie(finalizedMovie));
+    document.getElementById('inputSearchBox').value = '';
+
   };
 
   return (
