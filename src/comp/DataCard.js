@@ -10,7 +10,7 @@ const [idx,setIdx] = useState(1)
 
 useEffect(()=>{
   setIdx(1)
-  
+  console.log(data)
 },[data])
 
 useEffect(()=>{
@@ -39,7 +39,6 @@ useEffect(()=>{
 
   }
 
-  console.log(idx)
   return (
     <>
       {data ? (
@@ -97,7 +96,9 @@ useEffect(()=>{
 
 
       ) : (
-        "waiting..."
+
+      ' '
+         
       )}
 
       <div className="nextPrev">
