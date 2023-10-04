@@ -16,6 +16,7 @@ function Filtered({ data }) {
 
 
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
+
   const searchedItem = useSelector(state=> state.movieReducer.SearchMovieStored)
 
   useEffect(() => {
@@ -39,9 +40,9 @@ function Filtered({ data }) {
         : data;
 
         // console.log(genreFilteredMovies)
-    //  searchedItem === '' ? setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies) : setMovies(filterSearchedItem)
+     searchedItem === '' ? setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies) : setMovies(filterSearchedItem)
     
-    setMovies(genreFilteredMovies)
+    // searchedItem === '' ? setMovies(genreFilteredMovies): setMovies(filterSearchedItem);
   };
   
   
