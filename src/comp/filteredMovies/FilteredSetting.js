@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import './FilteredSetting.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getGenreRedcure, setSeacrhedMovie } from '../../featuresSlice/DataSlice';
+import { getGenreRedcure, setRatingSlice, setSeacrhedMovie } from '../../featuresSlice/DataSlice';
 import RangeInput from '../rangeInput/RangeInput';
 
 function FilteredSetting({ toggle }) {
   const allGenresData = useSelector((state) => state.movieReducer.moviesData);
+  const ratingData = useSelector(state=>state.movieReducer.RatingSlice)
   const dispatch = useDispatch();
   const [searchResults, setSearchResults] = useState([]);
   const [finalizedMovie, setFinalizedMovie] = useState('');
@@ -27,6 +28,7 @@ function FilteredSetting({ toggle }) {
   const resetFilters = () => {
     dispatch(getGenreRedcure('')); // Reset genre selection
     dispatch(setSeacrhedMovie(''));
+    dispatch(setRatingSlice(1.0))
 
   };
 

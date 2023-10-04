@@ -89,11 +89,11 @@ function Filtered({ data }) {
   
   const [rating, setRating] = useState(ratingSlice);
   const [movies, setMovies] = useState(data);
-
+  
+  
   useEffect(() => {
     setRating(ratingSlice);
     filterMovies();
-    console.log(movies)
   }, [gen, data, searchedItem, ratingSlice]);
 
   const filterMovies = () => {
@@ -109,6 +109,9 @@ function Filtered({ data }) {
 
     setMovies(filteredMovies);
   };
+  useEffect(()=>{
+    setMovies(data)
+  },[data])
 
 
 

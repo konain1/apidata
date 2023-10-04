@@ -4,7 +4,7 @@ import { createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     moviesData:[],
-    pageindex:0,
+    pageindex:1,
     getGenreMovies:[],
     SearchMovieStored:'',
     RatingSlice:1.0

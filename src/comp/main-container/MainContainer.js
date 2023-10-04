@@ -16,21 +16,21 @@ const url = 'https://api.tvmaze.com/shows'
 function MainContainer() {
 
      
-   const fetchMovies = useSelector(state=> state.movieReducer.moviesData)
-
-    const dispatch = useDispatch();
-
-    const [toggleFilter,setToggleFilter] = useState(true)
-
-
-    useEffect(()=>{
-      axios.get(url).then(res => {
-        
-        // setData(res.data.splice(0,29))
-        dispatch(addMovies(res.data))
-      }).catch(err => console.log(err))
-    },[])
   
+  const dispatch = useDispatch();
+  
+  const [toggleFilter,setToggleFilter] = useState(true)
+  
+  
+  useEffect(()=>{
+    axios.get(url).then(res => {
+      
+      // setData(res.data.splice(0,29))
+      dispatch(addMovies(res.data))
+    }).catch(err => console.log(err))
+  },[])
+  
+  const fetchMovies = useSelector(state=> state.movieReducer.moviesData)
   
 
     const filterHandler = ()=>{

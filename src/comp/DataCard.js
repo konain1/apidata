@@ -4,18 +4,19 @@ import { AiOutlineStar } from "react-icons/ai";
 import { useSelector } from 'react-redux';
 
 function DataCard({ data }) {
+
   let pageindex = useSelector(state => state.movieReducer.pageindex);
   
 const [idx,setIdx] = useState(1)
 
 useEffect(()=>{
   setIdx(1)
-  console.log(data)
 },[data])
+
 
 useEffect(()=>{
   setIdx(pageindex)
-  
+  console.log(pageindex)
 },[pageindex])
 
 
@@ -36,6 +37,8 @@ useEffect(()=>{
   const nextHandler = (next)=>{
 
     setIdx(next)
+    // console.log(next)
+
 
   }
 
@@ -97,7 +100,7 @@ useEffect(()=>{
 
       ) : (
 
-      ' '
+     <h1>Loadding</h1>
          
       )}
 

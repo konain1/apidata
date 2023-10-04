@@ -13,6 +13,8 @@ function RangeInput() {
 
   },[value])
 
+
+
   const handleRangeChange = (event) => {
     setValue(parseFloat(event.target.value));
   };
