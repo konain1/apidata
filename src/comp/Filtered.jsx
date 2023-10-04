@@ -25,20 +25,23 @@ function Filtered({ data }) {
 
   const ratingAndGenreData = () => {
     const filteredMovies = data.filter((movie) => movie.rating.average > rating);
+
     const filterSearchedItem = data.filter((movie)=> movie.name === searchedItem)
-    console.log(filterSearchedItem)
+
+    
     const genreFilteredMovies = gen !== ''
-        ? data.filter(
+        ? filteredMovies.filter(
             (item) =>
-              item.genres.includes(gen) ||
-              item.genres.includes(gen) ||
+              item.genres.includes(gen)  ||
+              item.genres.includes(gen)  ||
               item.genres.includes(gen)
           )
         : data;
 
-        console.log(genreFilteredMovies)
-     searchedItem === '' ? setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies) : setMovies(filterSearchedItem)
+        // console.log(genreFilteredMovies)
+    //  searchedItem === '' ? setMovies(genreFilteredMovies.length ? genreFilteredMovies : filteredMovies) : setMovies(filterSearchedItem)
     
+    setMovies(genreFilteredMovies)
   };
   
   

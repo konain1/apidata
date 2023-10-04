@@ -19,8 +19,8 @@ function FilteredSetting({ toggle }) {
 
   const filteredSettingClass = toggle ? 'filteredsetting active' : 'filteredsetting';
 
-  const getGenre = (event) => {
-    dispatch(getGenreRedcure(event.target.innerText));
+  const getGenre = (ge) => {
+    dispatch(getGenreRedcure(ge));
   };
 
   const resetFilters = () => {
@@ -86,7 +86,7 @@ function FilteredSetting({ toggle }) {
             {category.map((genre, key) => {
               if (genre !== undefined) {
                 return (
-                  <button onClick={(e) => getGenre(e)} key={key}>
+                  <button onClick={(e) => getGenre(genre)} key={key}>
                     {genre}
                   </button>
                 );
