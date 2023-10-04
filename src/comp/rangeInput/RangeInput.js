@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect,  useState } from 'react';
 import { setRatingSlice } from '../../featuresSlice/DataSlice';
 import { useDispatch } from 'react-redux';
 
@@ -19,7 +19,7 @@ function RangeInput() {
 
   return (
     <div>
-      <input
+      <input 
         type="range"
         min="1"
         max="10"
