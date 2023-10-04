@@ -11,18 +11,20 @@ import Pagination from './pagination/Pagination';
 
 function Filtered({ data }) {
   const [movies, setMovies] = useState(data);
-  const [rating, setRating] = useState(1);
-  // const [pageNo,setPageNo] = useState()
 
-
+const ratingSlice = useSelector(state=> state.movieReducer.RatingSlice)
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
 
   const searchedItem = useSelector(state=> state.movieReducer.SearchMovieStored)
+  const [rating, setRating] = useState(ratingSlice);
+
 
   useEffect(() => {
+    setRating(ratingSlice)
     ratingAndGenreData();
+    console.log(rating)
 
-  }, [gen, data,searchedItem]);
+  }, [gen, data,searchedItem,ratingSlice]);
 
   const ratingAndGenreData = () => {
     const filteredMovies = data.filter((movie) => movie.rating.average > rating);
@@ -33,9 +35,9 @@ function Filtered({ data }) {
     const genreFilteredMovies = gen !== ''
         ? filteredMovies.filter(
             (item) =>
-              item.genres.includes(gen)  ||
-              item.genres.includes(gen)  ||
-              item.genres.includes(gen)
+              item.genres.includes(gen )  ||
+              item.genres.includes(gen )  ||
+              item.genres.includes(gen )
           )
         : data;
 

@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import './FilteredSetting.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGenreRedcure, setSeacrhedMovie } from '../../featuresSlice/DataSlice';
+import RangeInput from '../rangeInput/RangeInput';
 
 function FilteredSetting({ toggle }) {
   const allGenresData = useSelector((state) => state.movieReducer.moviesData);
@@ -95,6 +96,11 @@ function FilteredSetting({ toggle }) {
             })}
           </div>
         </div>
+        <div className='ratingRange'>
+        <RangeInput/>
+        </div>
+        
+
       </div>
     </div>
   );
