@@ -9,7 +9,7 @@ function RangeInput() {
 
 
   useEffect(()=>{
-
+    console.log(value);
     dispatch(setRatingSlice(value))
 
   },[value])

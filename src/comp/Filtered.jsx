@@ -19,7 +19,7 @@ function Filtered({ data }) {
   
   useEffect(() => {
     setRating(ratingSlice);
-    console.log(ratingSlice)
+    console.log(ratingSlice,data)
     
 
     filterMovies();
@@ -27,16 +27,21 @@ function Filtered({ data }) {
 
   const filterMovies = () => {
     
+    
     let filteredMovies = data.filter((movie) => movie.rating.average > rating);
 
-    if (gen !== '') {
+    if (gen.length) {
       filteredMovies = filteredMovies.filter((item) => item.genres.includes(gen));
     }
 
     if (searchedItem !== '') {
 
-      filteredMovies = filteredMovies.filter((item) => item.name === searchedItem);
+      filteredMovies = data.filter((item) => item.name === searchedItem);
     }
+
+    console.log({filteredMovies},{gen},{searchedItem})
+
+    
 
     setMovies(filteredMovies);
   };
