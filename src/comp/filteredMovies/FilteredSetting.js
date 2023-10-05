@@ -5,6 +5,7 @@ import { getGenreRedcure, setRatingSlice, setSeacrhedMovie } from '../../feature
 import RangeInput from '../rangeInput/RangeInput';
 
 function FilteredSetting({ toggle }) {
+
   const allGenresData = useSelector((state) => state.movieReducer.moviesData);
   const ratingData = useSelector(state=>state.movieReducer.RatingSlice)
   const dispatch = useDispatch();
@@ -27,8 +28,8 @@ function FilteredSetting({ toggle }) {
 
   const resetFilters = () => {
     dispatch(getGenreRedcure('')); // Reset genre selection
-    dispatch(setSeacrhedMovie(''));
-    dispatch(setRatingSlice(1.0))
+    dispatch(setSeacrhedMovie('')); // Reset searchmovie
+    dispatch(setRatingSlice(1.0))   // reset rating
 
   };
 

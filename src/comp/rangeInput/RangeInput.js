@@ -9,6 +9,7 @@ function RangeInput() {
 
 
   useEffect(()=>{
+
     dispatch(setRatingSlice(value))
 
   },[value])
@@ -27,6 +28,7 @@ function RangeInput() {
         max="10"
         step="0.1"
         value={value}
+       
         onChange={handleRangeChange}
       />
       <p>Rating: {value}</p>

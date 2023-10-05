@@ -16,12 +16,15 @@ useEffect(()=>{
 
 useEffect(()=>{
   setIdx(pageindex)
-  console.log(pageindex)
 },[pageindex])
 
+useEffect(()=>{
+  console.log(data)
+},[data])
 
 
   const [isHovering, setIsHovering] = useState(false);
+
   const [itemId, setItemId] = useState();
 
   const mouseHandler = (e, id) => {
@@ -37,7 +40,6 @@ useEffect(()=>{
   const nextHandler = (next)=>{
 
     setIdx(next)
-    // console.log(next)
 
 
   }
