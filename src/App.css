@@ -78,7 +78,7 @@
     .filteredsetting .searchBox{
       width: 0; /* Initial width when toggle is false */
       transition: width 0.5s linear;
-      /* display: none; */
+      display: none;
       /* background-color: yellow; */
      
 
@@ -88,7 +88,7 @@
     
     .filteredsetting.active .searchBox{
         align-items: center;
-        width: 100%;
+        width: 80%;
         text-align: center;
         border: 1px solid rgb(71, 46, 46);
         display: flex;
@@ -128,13 +128,13 @@
         height: 100%; */
        
     }
-    .genreBox{
+    .filteredsetting .genreBox{
       width: 0; /* Initial width when toggle is false */
       transition: width 0.5s linear;
       /* display: none; */
 
     }
-    .genreBox{
+    .filteredsetting.active .genreBox{
         border: 1px solid white;
         display: grid;
         height: 300px;
@@ -166,9 +166,16 @@
     .filteredsetting .resetFilter{
       transform: translateX(-50%);
     }
-   .ratingRange{
-    margin: 10rem auto;
-   }
+    .filteredsetting.active .ratingRange{
+      display: flex;
+      margin: 70px 30px;
+      justify-content: center;
+      align-items: center;
+    }
+    .filteredsetting .ratingRange{
+      display: none;
+    }
+   
   }
 
 
@@ -222,12 +229,4 @@
   }
 
 
-  /* filtered */
-
   
-  @media screen and (max-width:950px){
-    /* .filteredDataTransferDiv{
-      background-color: aqua;
-      width: 400px;
-    } */
-  }

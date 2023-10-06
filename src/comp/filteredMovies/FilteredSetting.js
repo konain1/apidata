@@ -100,7 +100,7 @@ function FilteredSetting({ toggle }) {
           </div>
         </div>
         <div className='ratingRange'>
-        <RangeInput/>
+        <RangeInput/> 
         </div>
         
 
