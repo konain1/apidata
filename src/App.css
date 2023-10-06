@@ -2,7 +2,11 @@
 
 /* MainContainer */
 
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* This ensures that padding and border are included in element size calculations */
+}
 
 @media screen and (max-width: 950px) {
     
@@ -54,20 +58,19 @@
     .filteredsetting.active {
       width: 100%;
       transition: width 0.7s linear; /* Add a smooth transition for the width property */
-      /* position: absolute; */
-      z-index: 90;
-      top: 40px;
-      height: 90vh;
+     display: flex;
       border-radius: 0 0 50% 0;
       position: fixed;
+      background-color: #971212;
+      justify-content: start;
+      flex-direction: column;
     }
     .filteredsetting {
       z-index: 90;
-      top: 40px;
+      /* top: 40px; */
       height: 90vh;
       border-radius: 0 0 50% 0;
-      position: absolute;
-
+      /* position: absolute; */
       width: 0; /* Initial width when toggle is false */
       transition: width 0.7s linear; /* Add a smooth transition for the width property */
     }
@@ -75,28 +78,30 @@
     .filteredsetting .searchBox{
       width: 0; /* Initial width when toggle is false */
       transition: width 0.5s linear;
-      display: none;
+      /* display: none; */
+      /* background-color: yellow; */
+     
+
+
     }
    
     
     .filteredsetting.active .searchBox{
         align-items: center;
-        height: 100px;
         width: 100%;
         text-align: center;
-        margin: 10px auto;
-        border: 1px solid white;
-        flex-direction: column;
+        border: 1px solid rgb(71, 46, 46);
         display: flex;
         align-items: center;
         justify-content: center;
-        top: 30px;
-        /* position: absolute; */
-        display: none;
+
+    }
+    .filteredsetting.active .searchBox li{
+      font-size: 4px;
     }
     #inputSearchBox {
         width: 100px;
-        height: 10px;
+        height: 20px;
         border-radius: 15px;
         text-align: center;
         border-radius: 10px;
@@ -106,35 +111,47 @@
     }
 
     .searchBtn{
-      width: 50px;
-      font-size: 8px;
+      display: flex;
+      width: 40px;
+      font-size: 4px;
       text-align: center;
+      align-items: center;
+      justify-content: center;
     }
     h2{
       display: none;
     }
     .mainbox{
       
-        border: 1px solid white;
+        /* border: 1px solid white;
         width: 100%;
-        height: 100%;
+        height: 100%; */
        
+    }
+    .genreBox{
+      width: 0; /* Initial width when toggle is false */
+      transition: width 0.5s linear;
+      /* display: none; */
+
     }
     .genreBox{
         border: 1px solid white;
         display: grid;
-        overflow-wrap:nowrap;
-        height: 400px;
-        width: 100%;
-      display: none;
+        height: 300px;
+        width: 200px;
+      /* display: none; */
         border-radius: 4px;
-        position: absolute;
+        flex-direction: row;
 
     }
     .genreBox button{
-      width: 40px;
-      height: 40px;
-      font-size: 8px;
+      width: 30px;
+      height: 20px;
+      font-size: 4px;
+      border: 0.1px solid rgb(223, 37, 37);
+      background: unset;
+      padding: 4px;
+      color: white;
     }
     .resetFilter{
       width: 100px;
@@ -149,37 +166,68 @@
     .filteredsetting .resetFilter{
       transform: translateX(-50%);
     }
-   
+   .ratingRange{
+    margin: 10rem auto;
+   }
   }
 
 
   /* DataCard */
   @media screen and (max-width:600px) {
+    
     .container {
-     
-      overflow-x: hidden;
       display: grid;
-      grid-template-columns: repeat(1,1fr);
+      grid-template-columns: 1fr 1fr;
       justify-content: space-around;
-      background-color: #959191;
-      width: 100%;
+      background-color: #383131;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
     }
     .poster {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    height: 200px;
-    width: 200px;
-    justify-content: center;
-    margin: 0 auto;
+    height: 100px;
+    width: 100px;
     border-radius: 15px;
     background: #222;
     cursor: pointer;
      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+     display: none;
+     /* overflow: hidden; */
+    }
+    .poster-img{
+      height: 100px;
+      width: 100px;
+      border-radius: 15px;
 
     }
+    
 
+    .poster-title {
+      font-size: 4px;
+    }
 
-
-   
+    .genres {
+      font-size: 8px;
+      margin: 10px 10px;
+    }
+   .spanUrl{
+    font-size: 4px;
+    
+    
+   }
  
+  }
+
+
+  /* filtered */
+
+  
+  @media screen and (max-width:950px){
+    /* .filteredDataTransferDiv{
+      background-color: aqua;
+      width: 400px;
+    } */
   }

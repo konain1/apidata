@@ -74,7 +74,7 @@ useEffect(()=>{
                       <br />
                       <span>premiered: {item.premiered}</span>
                       <br />
-                      <span style={{ fontSize: "8px" }}>URL: {item.url}</span>
+                      <span className="spanUrl" >URL: {item.url}</span>
                     </div>
                   </div>
                   {itemId !== item.id ? (

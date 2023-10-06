@@ -1,129 +1,3 @@
-/* *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.container {
-  
-    padding: 2rem 0;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-content: space-around;
-    gap: 5rem;
-    min-height: 100vh;
-} */
-
-/* .poster{
-    display: flex;
-    justify-content: center;
-    height: 350px;
-    width: 350px;
-    justify-content: center;
-    margin: 0 auto;
-    border-radius: 15px;
-    background: #222;
-    cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-.poster:hover {
-    transform: rotate(5deg);
-
-} */
-
-
-/* .poster-img {
-    transform: rotate(3deg);
-    transition: 0.2s ease-in 0.5ms;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-   
-
-} */
-
-/* .poster-title{
-    color: aliceblue;
-    font-family: 'Aclonica', sans-serif;
-    margin: 10px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
- */
-
-/* .genres {
-    font-size: 8px;
-    margin: 10px 10px;
-    gap: 2rem;
-}
-.desc {
-    display: flex;
-    justify-content: center;
-    display: none;
-}
-.Desc{
-    display: block;
-} */
-
-/* .hidden{
-    display: none;
-}
-
-.databaseIcon     {
-  font-size: 50px;
-  position:absolute;
-    left: 0;
-    z-index: 99;
-}
- */
-
-
-
-
-
-
-
-
-
-/* 
-@media screen and (max-width:1200px) {
-    
-    .container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        overflow: hidden;
-        min-height: 100vh;
-    }
-    .poster{
-        width: 250px;
-        height: 250px;
-    }
-    .poster-title{
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width:600px) {
-    
-    .container{
-        display: grid;
-        grid-template-columns: 1fr;
-        overflow: hidden;
-    }
-    .poster{
-        width: 250px;
-        height: 250px;
-    }
-    .poster-title{
-        font-size: 8px;
-    }
-} */
-
-
-
-
-
 
 
 
@@ -185,7 +59,7 @@
   .genres {
     font-size: 8px;
     margin: 10px 10px;
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .desc {
@@ -206,57 +80,20 @@
     font-size: 50px;
     position: absolute;
     left: 0;
-    z-index: 99;
+    z-index: 9;
   }
   
-  /* media query for tablets */
-  @media screen and (max-width: 1200px) {
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-      min-height: 100vh;
-      gap: 2rem; /* Adjust the gap between items */
-    }
-    .poster {
-      width: 370px; /* Set a fixed width */
-      height: 370px; /* Set a fixed height */
-      margin: 0 auto; /* Center the posters */
-    }
-    .poster-title {
-      font-size: 12px;
-    }
-  }
-  
-  /* media query for mobile phones */
-  @media screen and (max-width: 600px) {
-    .container {
-      display: grid;
-      grid-template-columns: 1fr;
-      overflow: hidden;
-      gap: 1rem; /* Adjust the gap between items */
-    }
-    .poster {
-      width: 370px; /* Set a fixed width */
-      height: 370px; /* Set a fixed height */
-      margin: 0 auto; /* Center the posters */
-    }
-    .poster-title {
-      font-size: 8px;
-    }
-  }
-  
-
   .nextPrev{
     /* border: 1px solid black; */
     display: flex;
     justify-content: space-evenly;
-
-  }
-  .nextPrev button {
+    
+    }
+    .nextPrev button {
     padding:10px;
     border-radius: 10px;
     background: unset;
     font-size: 12px;
     color: white;
-  }
+    }
+    

@@ -36,7 +36,7 @@ function Filtered({ data }) {
 
     if (searchedItem !== '') {
 
-      filteredMovies = data.filter((item) => item.name === searchedItem);
+        filteredMovies = data.filter((item) => item.name === searchedItem);
     }
 
     console.log({filteredMovies},{gen},{searchedItem})
@@ -53,7 +53,7 @@ function Filtered({ data }) {
 
 
   return (
-    <div>
+    <div className='filteredDataTransferDiv'>
       <DataCard data={movies} />
       <Pagination moviesList={movies} />
     </div>
