@@ -46,9 +46,9 @@ function MainContainer() {
     <FilteredSetting toggle={toggleFilter}/>
     </div>
     <div className='col-2'>
+    
     <div className='toggle'><button onClick={filterHandler}>X</button></div>
 
-    {/* { fetchMovies.length > 0 ? <Filtered data={fetchMovies} />  : 'loading .....'}  */}
 
     {fetchMovies.length > 0 ? (
       <Filtered key="filtered-component" data={fetchMovies} />

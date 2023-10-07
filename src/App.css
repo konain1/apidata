@@ -142,6 +142,7 @@
       /* display: none; */
         border-radius: 4px;
         flex-direction: row;
+        z-index: 100;
 
     }
     .genreBox button{
@@ -186,7 +187,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       justify-content: space-around;
-      background-color: #383131;
+      /* background-color: #383131; */
       max-width: 100%;
       padding: 0;
       margin: 0;
@@ -201,7 +202,7 @@
     background: #222;
     cursor: pointer;
      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-     display: none;
+     /* display: none; */
      /* overflow: hidden; */
     }
     .poster-img{
@@ -230,3 +231,15 @@
 
 
   
+
+  /* filtered */
+
+  .filteredDataTransferDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 10px auto;
+    /* overflow-x: hidden; */
+    position: relative;
+    width: 70vw;
+  }

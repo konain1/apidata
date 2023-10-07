@@ -1,15 +1,16 @@
 
 
 .pageDiv{
-    width: 50vw;
+    width: 70vw;
     /* border: 1px solid black; */
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     /* overflow: scroll; */
     align-content: center;
     margin: 30px auto;
     position: relative;
     
+ 
 
 
 }
