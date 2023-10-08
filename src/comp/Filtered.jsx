@@ -7,6 +7,7 @@ import DataCard from './DataCard';
 import { useSelector } from 'react-redux';
 // import { getGenreRedcure } from '../featuresSlice/DataSlice';
 import Pagination from './pagination/Pagination';
+import "./Filtered.css"
 
 function Filtered({ data ,toggle}) {
 

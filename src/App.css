@@ -250,15 +250,14 @@
   
 
   /* filtered */
-
+/* 
   .filteredDataTransferDiv{
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 10px auto;
-    /* overflow-x: hidden; */
-    /* position: relative; */
+   
     width: 70vw;
     z-index: 1;
     transition: all 0.3s ease;
-  }
+  } */
