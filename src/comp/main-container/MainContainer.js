@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 import axios from 'axios'
 import Filtered from '../Filtered'
 // import DataCard from '../DataCard';
-import FilteredSetting from '../filteredMovies/FilteredSetting';
+import SideNavbar from '../filteredMovies/SideNavbar';
 import {useDispatch,useSelector} from 'react-redux';
 import {addMovies} from '../../featuresSlice/DataSlice'
 
@@ -43,7 +43,7 @@ function MainContainer() {
   return (
     <div className='maincontainer'>
     <div className='col-1'  >
-    <FilteredSetting toggle={toggleFilter}/>
+    <SideNavbar toggle={toggleFilter}/>
     </div>
     <div className='col-2'>
     

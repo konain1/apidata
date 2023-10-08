@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './FilteredSetting.css';
+import './SideNavbar.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGenreRedcure, setRatingSlice, setSeacrhedMovie } from '../../featuresSlice/DataSlice';
 import RangeInput from '../rangeInput/RangeInput';
 
-function FilteredSetting({ toggle }) {
+function SideNavbar({ toggle }) {
 
   const allGenresData = useSelector((state) => state.movieReducer.moviesData);
   const ratingData = useSelector(state=>state.movieReducer.RatingSlice)
@@ -126,4 +126,4 @@ function FilteredSetting({ toggle }) {
   );
 }
 
-export default FilteredSetting;
+export default SideNavbar;

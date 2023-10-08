@@ -2,7 +2,7 @@
 .filteredDataTransferDiv{
     display: flex;
     flex-direction: column;
-    background-color: green;
+    background-color: #2d2b2b;
     display: flex;
     justify-content: center;
 }
