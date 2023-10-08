@@ -47,7 +47,7 @@ useEffect(()=>{
     <>
       {data ? (
         
-        <div className={toggle ?"containerX":"container"}>
+        <div className={"container"}>
           {data.slice((idx-1) * 10 ,(idx-1) * 10 + 10).map((item) => {
             return (
               <div

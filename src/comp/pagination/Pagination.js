@@ -20,9 +20,7 @@ function Pagination({ moviesList }) {
   const PageIndexHandler = (key,e)=>{
     
     dispatch(pagination(key))
-    const currentButton = e.target;
-    // setIndex(e)
-    console.log(currentButton)
+    
   }
   
   return (
