@@ -39,7 +39,7 @@
 
 .col-1 {
   position: absolute;
-  width: 300%;
+  width: 200%;
   height: 100vh;
   display: grid;
   transform: translateX(0px);
@@ -57,22 +57,22 @@
   @media screen and (max-width:950px) {
     .filteredsetting.active {
       width: 100%;
-      transition: width 0.7s linear; /* Add a smooth transition for the width property */
+      /* transition: width 0.7s linear; Add a smooth transition for the width property */
      display: flex;
       border-radius: 0 0 50% 0;
       position: fixed;
-      background-color: #971212;
+      background-color: #855e5e;
       justify-content: start;
       flex-direction: column;
     }
     .filteredsetting {
-      z-index: 90;
+      z-index: 100;
       /* top: 40px; */
       height: 90vh;
       border-radius: 0 0 50% 0;
       /* position: absolute; */
       width: 0; /* Initial width when toggle is false */
-      transition: width 0.7s linear; /* Add a smooth transition for the width property */
+      transition: all 0.7s ease-in-out; /* Add a smooth transition for the width property */
     }
 
     .filteredsetting .searchBox{
@@ -94,7 +94,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
     }
     .filteredsetting.active .searchBox li{
       font-size: 4px;
@@ -135,7 +134,6 @@
 
     }
     .filteredsetting.active .genreBox{
-        border: 1px solid white;
         display: grid;
         height: 300px;
         width: 200px;
@@ -172,6 +170,7 @@
       margin: 70px 30px;
       justify-content: center;
       align-items: center;
+     
     }
     .filteredsetting .ratingRange{
       display: none;
@@ -191,6 +190,23 @@
       max-width: 100%;
       padding: 0;
       margin: 0;
+      z-index: 1;
+      transition: all 0.5s linear;
+      
+    }
+    .containerX{
+      transform: translateX(130px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+      transition: all 0.5s linear;
+
+
+    }
+    .containerX .post{
+      height: 50px;
+      width: 50px;
+      display: none;
     }
     .poster {
     display: grid;
@@ -204,6 +220,7 @@
      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
      /* display: none; */
      /* overflow: hidden; */
+     z-index: 1;
     }
     .poster-img{
       height: 100px;
@@ -240,6 +257,8 @@
     padding: 0;
     margin: 10px auto;
     /* overflow-x: hidden; */
-    position: relative;
+    /* position: relative; */
     width: 70vw;
+    z-index: 1;
+    transition: all 0.3s ease;
   }

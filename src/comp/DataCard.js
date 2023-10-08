@@ -3,7 +3,7 @@ import "./DataCard.css";
 import { AiOutlineStar } from "react-icons/ai";
 import { useSelector } from 'react-redux';
 
-function DataCard({ data }) {
+function DataCard({ data,toggle }) {
 
   let pageindex = useSelector(state => state.movieReducer.pageindex);
   
@@ -19,7 +19,6 @@ useEffect(()=>{
 },[pageindex])
 
 useEffect(()=>{
-  console.log(data)
 },[data])
 
 
@@ -48,7 +47,7 @@ useEffect(()=>{
     <>
       {data ? (
         
-        <div className="container">
+        <div className={toggle ?"containerX":"container"}>
           {data.slice((idx-1) * 10 ,(idx-1) * 10 + 10).map((item) => {
             return (
               <div

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './FilteredSetting.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getGenreRedcure, setRatingSlice, setSeacrhedMovie } from '../../featuresSlice/DataSlice';
@@ -11,6 +11,7 @@ function FilteredSetting({ toggle }) {
   const dispatch = useDispatch();
   const [searchResults, setSearchResults] = useState([]);
   const [finalizedMovie, setFinalizedMovie] = useState('');
+  const [ maxRange, setMaxRange ] = useState(0);
 
   const category = useMemo(() => {
     const uniqueGenres = new Set();
@@ -29,7 +30,8 @@ function FilteredSetting({ toggle }) {
   const resetFilters = () => {
     dispatch(getGenreRedcure('')); // Reset genre selection
     dispatch(setSeacrhedMovie('')); // Reset searchmovie
-    dispatch(setRatingSlice(1.0))   // reset rating
+    // dispatch(setRatingSlice(1.0))   // reset rating
+    // setMaxRange(1)
 
   };
 
@@ -52,11 +54,26 @@ function FilteredSetting({ toggle }) {
   };
 
   const gotThatMovie = () => {
-    console.log(finalizedMovie);
+    // console.log(finalizedMovie);
     dispatch(setSeacrhedMovie(finalizedMovie));
     document.getElementById('inputSearchBox').value = '';
 
   };
+
+  // console.log({allGenresData} )
+  useEffect(() => {
+    let maxRat = 0
+    allGenresData.forEach(movie => {
+      if(movie.rating.average > maxRat) {
+        maxRat = movie.rating.average;
+        console.log('rat' + maxRat)
+       
+      }
+    })
+    console.log('maxRat = ' + maxRat)
+    setMaxRange(maxRat)
+  },[allGenresData])
+
 
   return (
     <div>
@@ -100,7 +117,7 @@ function FilteredSetting({ toggle }) {
           </div>
         </div>
         <div className='ratingRange'>
-        <RangeInput/> 
+        <RangeInput maxRange={maxRange}/> 
         </div>
         
 

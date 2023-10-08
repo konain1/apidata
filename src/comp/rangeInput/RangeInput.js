@@ -1,18 +1,20 @@
 import React, { useEffect,  useState } from 'react';
 import { setRatingSlice } from '../../featuresSlice/DataSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 
-function RangeInput() {
-  const [value, setValue] = useState(1);
-
+function RangeInput({ maxRange }) {
+  
+  const [value, setValue] = useState(maxRange);
+  
   const dispatch = useDispatch();
 
 
   useEffect(()=>{
-    console.log(value);
     dispatch(setRatingSlice(value))
-
   },[value])
+
+  console.log(maxRange + 'max')
+  
 
 
 
@@ -25,7 +27,7 @@ function RangeInput() {
       <input 
         type="range"
         min="1"
-        max="10"
+        max={maxRange}
         step="0.1"
         value={value}
        

@@ -6,6 +6,7 @@
     background-color: #959191;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 .toggle button {
     position: absolute;
@@ -31,6 +32,7 @@
 .col-1{
     width: 100%;
     background-color: aqua;
+    
 }
 .col-2{
     width: 100%;

@@ -51,7 +51,7 @@ function MainContainer() {
 
 
     {fetchMovies.length > 0 ? (
-      <Filtered key="filtered-component" data={fetchMovies} />
+      <Filtered key="filtered-component" data={fetchMovies} toggle={toggleFilter} />
     ) : (
       'loading .....'
     )}

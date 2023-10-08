@@ -7,7 +7,7 @@ const initialState = {
     pageindex:1,
     getGenreMovies:[],
     SearchMovieStored:'',
-    RatingSlice:1.0
+    RatingSlice:1
 }
 
 

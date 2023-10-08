@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux';
 // import { getGenreRedcure } from '../featuresSlice/DataSlice';
 import Pagination from './pagination/Pagination';
 
-function Filtered({ data }) {
+function Filtered({ data ,toggle}) {
+
   const ratingSlice = useSelector((state) => state.movieReducer.RatingSlice);
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
   const searchedItem = useSelector((state) => state.movieReducer.SearchMovieStored);
@@ -19,8 +20,7 @@ function Filtered({ data }) {
   
   useEffect(() => {
     setRating(ratingSlice);
-    console.log(ratingSlice,data)
-    
+    // 
 
     filterMovies();
   }, [gen, searchedItem, ratingSlice]);
@@ -39,7 +39,7 @@ function Filtered({ data }) {
         filteredMovies = data.filter((item) => item.name === searchedItem);
     }
 
-    console.log({filteredMovies},{gen},{searchedItem})
+    // console.log({filteredMovies},{gen},{searchedItem})
 
     
 
@@ -47,14 +47,14 @@ function Filtered({ data }) {
   };
   useEffect(()=>{
     setMovies(data)
-    console.log(movies)
+    // console.log(movies)
   },[data])
 
 
 
   return (
     <div className='filteredDataTransferDiv'>
-      <DataCard data={movies} />
+      <DataCard data={movies}  toggle={toggle}/>
       <Pagination moviesList={movies} />
     </div>
   );
