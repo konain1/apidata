@@ -76,6 +76,26 @@ useEffect(()=>{
                       <span className="spanUrl" >URL: {item.url}</span>
                     </div>
                   </div>
+                  <div className="mobile-view">
+                  <div className="mobileRating">
+                  <AiOutlineStar className="ratingStar" /> <span>{item.rating.average}</span>
+                    
+                  </div>
+                  <div className="mobilePremier">
+                  <span>premiered: {item.premiered}</span>
+
+                  </div>
+
+                  <div className="mobile-genre">
+                  {item.genres.map((list, key) => (
+                          <span key={key} className="genres">
+                            {list}
+                          </span>
+                        ))}
+                  </div>
+                  </div>
+                 
+
                   {itemId !== item.id ? (
                     <img
                       className="poster-img"

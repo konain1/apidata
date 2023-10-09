@@ -42,9 +42,53 @@
         height: 80px;
         display: flex;
         justify-content:space-between ;
+        position: relative;
     }
+    
     .poster-img{
         width: 60px;
         height: 80px;
     }
+    .poster span{
+        font-size: 4px;
+    }
+    .poster h2 {
+        font-size: 8px;
+    }
+    .spanUrl{
+        display: none;
+    }
+    .mobileRating{
+        bottom: 0;
+        left: 10px;
+    }
+    .mobileRating span{
+        color: white;
+        font-size: 8px;
+    }
+    .ratingStar{
+        color: gold;
+    }
+    .mobilePremier{
+        bottom: 0px;
+        left: 100px;
+        color: white;
+        font-size: 16px;
+    }
+    .mobilePremier span {
+        font-size: 8px;
+    }
+    .mobile-view{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        left: 10px;
+
+    }
+   .mobile-genre span{
+
+    color: white;
+    font-size: 8px;
+   }
 }
