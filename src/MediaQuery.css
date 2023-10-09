@@ -2,5 +2,49 @@
 @media screen and (max-width:600px) {
     
     .maincontainer{
+        display: flex;
+    }
+    .col-1{
+        flex: 1;
+        height: 100vh;
+        
+    }
+   
+    .filteredsetting{
+        overflow: hidden;
+        height: 100vh;
+    }
+    .searchBox{
+        display: none;
+    }
+
+
+
+    /* col-2 */
+
+    .col-2{
+        flex: 3;
+        height: 100vh;
+    }
+
+    .filteredDataTransferDiv{
+
+        
+
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .poster{
+        width: 60vw;
+        height: 80px;
+        display: flex;
+        justify-content:space-between ;
+    }
+    .poster-img{
+        width: 60px;
+        height: 80px;
     }
 }
