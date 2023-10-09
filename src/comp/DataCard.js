@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./DataCard.css";
 import { AiOutlineStar } from "react-icons/ai";
 import { useSelector } from 'react-redux';
+import {HiOutlinePlay } from 'react-icons/hi'
 
 function DataCard({ data,toggle }) {
 
@@ -59,21 +60,21 @@ useEffect(()=>{
                 <>
                   <div className="poster-title">
                     <h2>{item.name}</h2>
-                    <div className={itemId === item.id ? "poster-title" : "hidden"}>
+                      <button className="buttonUrl" > <HiOutlinePlay className="download" /><a href={item.url}>Watch this movie</a> </button>
+                    <div className={"poster-rating" }>
                       <AiOutlineStar className="icon" /> <span>{item.rating.average}</span>
                       <br />
-                      <h2 className="genre">
-                        Genre
+                      <div className="genre">
+                      <span>premiered: {item.premiered} { }</span>  <br></br>
+
                         {item.genres.map((list, key) => (
                           <span key={key} className="genres">
-                            {list}
+                            {list} { }
                           </span>
                         ))}
-                      </h2>
+                      </div>
                       <br />
-                      <span>premiered: {item.premiered}</span>
                       <br />
-                      <span className="spanUrl" >URL: {item.url}</span>
                     </div>
                   </div>
                   <div className="mobile-view">
@@ -96,17 +97,13 @@ useEffect(()=>{
                   </div>
                  
 
-                  {itemId !== item.id ? (
+                  
                     <img
                       className="poster-img "
                       src={item.image.original}
                       alt={item.name}
                     />
-                  ) :  <img
-                      className="mobile-poster-img "
-                      src={item.image.original}
-                      alt={item.name}
-                    />}
+                  
                 </>
 
                    

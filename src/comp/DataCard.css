@@ -2,88 +2,87 @@
 
 
 
-
+/* 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  .container {
-   
-    padding: 2rem 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-around;
-    gap: 1rem;
-    min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+ 
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+  gap: 1rem;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.poster {
+  display: flex;
+  justify-content: center;
+  height: 300px; 
+  width: 300px; 
+  margin: 0 auto; 
+  border-radius: 15px;
+  background: #222;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     z-index: 1;
-  }
-  
-  .poster {
-    display: flex;
-    justify-content: center;
-    height: 300px; /* Set a fixed height */
-    width: 300px; /* Set a fixed width */
-    margin: 0 auto; /* Center horizontally */
-    border-radius: 15px;
-    background: #222;
-    cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-      z-index: 1;
-  }
-  
-  .poster:hover {
-    transform: rotate(5deg);
-  }
-  
-  .poster-img {
-    transform: rotate(3deg);
-    transition: 0.2s ease-in 0.5ms;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-    /* display: none; */
-  }
-  
-  .poster-title {
-    color: aliceblue;
-    font-family: 'Aclonica', sans-serif;
-    margin: 10px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 8px;
-  }
-  
-  .genres {
-    font-size: 8px;
-    margin: 10px 10px;
-    gap: 1rem;
-  }
-  
-  .desc {
-    display: flex;
-    justify-content: center;
-    display: none;
-  }
-  
-  .Desc {
-    display: block;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .databaseIcon {
-    font-size: 50px;
-    position: absolute;
-    left: 0;
-    z-index: 9;
-  }
+}
+
+.poster:hover {
+  transform: rotate(5deg);
+}
+
+.poster-img {
+  transform: rotate(3deg);
+  transition: 0.2s ease-in 0.5ms;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.poster-title {
+  color: aliceblue;
+  font-family: 'Aclonica', sans-serif;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 8px;
+}
+
+.genres {
+  font-size: 8px;
+  margin: 10px 10px;
+  gap: 1rem;
+}
+
+.desc {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.Desc {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.databaseIcon {
+  font-size: 50px;
+  position: absolute;
+  left: 0;
+  z-index: 9;
+} */
   
   .nextPrev{
     /* border: 1px solid black; */
@@ -99,3 +98,78 @@
     color: white;
     }
     
+
+
+    .container {
+ 
+      min-height: 100vh;
+      z-index: 1;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:1rem;
+
+    }
+    .poster{
+      width: 70%;
+      height: 150px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgb(79, 5, 79);;
+      overflow: hidden;
+      margin: 10px 0px;
+      background-color: #3c3a3a;
+    }
+    .poster-img{
+      width: 120px;
+      height: 95%;
+      border-radius: 5px;
+    }
+    .mobile-view{
+      display: none;
+    }
+    .poster-title {
+      height: 100px;
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      color: white;
+
+    }
+    .poster-rating{
+      /* display: none; */
+    }
+    .icon{
+      color: gold;
+    }
+    .buttonUrl{
+      background: unset;
+      width: 180px;
+      height: 30px;
+      margin-top: 30px;
+      border-radius: 10px;
+      background-color: rgb(79, 5, 79);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 20px;
+
+
+    }
+    .buttonUrl a{
+      text-decoration: none;
+      color: white;
+    }
+    .download{
+      color: white;
+      font-size: 18px;
+    } 
+
+    .genre{
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+    }

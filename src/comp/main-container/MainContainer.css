@@ -1,41 +1,39 @@
 
-.maincontainer{
-    display: flex;
-    /* grid-template-columns: 1fr 3fr; */
-    padding: unset;
-    background-color: #959191;
-    padding: 0;
-    margin: 0;
-    position: relative;
-}
-.toggle button {
-    position: absolute;
-    font-size: 30px;
-    cursor: pointer;
-    top: 10px;
-    width: 40px;
-    background: unset;
-    border-radius: 15px;
-    border-color: azure;
-    top: 50%;
-    z-index: 100;
-    display: none;
-    position: fixed;
-}
-.toggle button:hover{
-    transform: scale(1.2);
-    background-color: aliceblue;
 
-    color: red;
-}
 
-.col-1{
-    flex: 1;
-    background-color: #222;
     
-}
-.col-2{
-   flex: 3;
-    margin: 0;
-    background-color: rgb(5, 21, 21);
-}
+    .maincontainer{
+        display: flex;
+    }
+    .col-1{
+        flex: 1;
+        height: 100vh;
+        
+    }
+   
+    .filteredsetting{
+        height: 100vh;
+    }
+    .searchBox{
+        display: none;
+    }
+
+
+
+    /* col-2 */
+
+    .col-2{
+        flex: 3;
+        height: 100vh;
+    }
+
+    .filteredDataTransferDiv{
+
+        display: flex;
+        overflow: hidden;
+        
+
+    }
+
+  
+
