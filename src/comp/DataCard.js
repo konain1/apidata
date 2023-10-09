@@ -60,7 +60,7 @@ useEffect(()=>{
                   <div className="poster-title">
                     <h2>{item.name}</h2>
                     <div className={itemId === item.id ? "poster-title" : "hidden"}>
-                      <AiOutlineStar /> <span>{item.rating.average}</span>
+                      <AiOutlineStar className="icon" /> <span>{item.rating.average}</span>
                       <br />
                       <h2 className="genre">
                         Genre
@@ -98,11 +98,15 @@ useEffect(()=>{
 
                   {itemId !== item.id ? (
                     <img
-                      className="poster-img"
+                      className="poster-img "
                       src={item.image.original}
                       alt={item.name}
                     />
-                  ) : null}
+                  ) :  <img
+                      className="mobile-poster-img "
+                      src={item.image.original}
+                      alt={item.name}
+                    />}
                 </>
 
                    

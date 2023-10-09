@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 // import { getGenreRedcure } from '../featuresSlice/DataSlice';
 import Pagination from './pagination/Pagination';
 import "./Filtered.css"
+import Search from './Searchbox/Search';
 
 function Filtered({ data ,toggle}) {
 
@@ -55,6 +56,7 @@ function Filtered({ data ,toggle}) {
 
   return (
     <div className='filteredDataTransferDiv'>
+      <Search/>
       <DataCard data={movies}  toggle={toggle}/>
       <Pagination moviesList={movies} />
     </div>

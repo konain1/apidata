@@ -45,9 +45,10 @@
         position: relative;
     }
     
-    .poster-img{
+    .mobile-poster-img,.poster-img{
         width: 60px;
         height: 80px;
+        display: block;
     }
     .poster span{
         font-size: 4px;
@@ -91,4 +92,20 @@
     color: white;
     font-size: 8px;
    }
+
+  /* removing desktop hover effect */
+
+   .poster:hover {
+
+    transform: none;
+    border: 0.3px solid white;
+    overflow: hidden;
+    cursor: pointer;
+    }
+    .genre, .poster-title span , .poster-title .icon{
+        display: none;
+    }
+  
+
+
 }
