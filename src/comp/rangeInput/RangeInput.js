@@ -1,10 +1,14 @@
 import React, { useEffect,  useState } from 'react';
 import { setRatingSlice } from '../../featuresSlice/DataSlice';
 import { useDispatch,useSelector } from 'react-redux';
+import './RangeInput.css'
+
+
 
 function RangeInput({ maxRange }) {
   
   const [value, setValue] = useState(maxRange);
+  const allMoviesData = useSelector(state=>state.movieReducer.moviesData)
   
   const dispatch = useDispatch();
 
@@ -23,9 +27,14 @@ function RangeInput({ maxRange }) {
   };
 
   return (
-    <div>
+    <>
+
+    <div className='ratings'>
+    
+    </div>
+        <div className='ratingScale'>
       <input 
-        type="range"
+        type="range" 
         min="1"
         max={maxRange}
         step="0.1"
@@ -35,6 +44,8 @@ function RangeInput({ maxRange }) {
       />
       <p>Rating: {value}</p>
     </div>
+    </>
+  
   );
 }
 

@@ -104,12 +104,17 @@ function SideNavbar({ toggle }) {
         <div className='mainbox'>
           <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>
           <div className='genreBox'>
+          <h2 style={{color:'white'}}>Genres</h2>
             {category.map((genre, key) => {
               if (genre !== undefined) {
-                return (
-                  <button onClick={(e) => getGenre(genre)} key={key}>
+                return (<div className='categoryDiv'>
+                <input type='radio'  onClick={(e)=> getGenre(genre)} name='genre'/>
+                  {/* <button onClick={(e) => getGenre(genre)} key={key}>
                     {genre}
-                  </button>
+                  </button> */}
+                  <span key={key} >{genre}</span>
+                </div>
+                 
                 );
               }
               return null;

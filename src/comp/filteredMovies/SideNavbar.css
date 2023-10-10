@@ -1,4 +1,4 @@
-
+/* 
 
 
 
@@ -13,7 +13,6 @@
     position: fixed;
     display: grid;
     place-content: center;
-    z-index: 100;
 
 }
 
@@ -71,4 +70,34 @@
     display: flex;
     justify-content: center;
     margin: 20px;
+} */
+
+.filterSetting{
+    background-color: #2d2b2b;
+}
+.mainbox{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    background-color: #222;
+    height: 70vh;
+    text-align: center;
+    width: 70%;
+    margin: 20px auto;
+    overflow: scroll;
+    background-color: #3c3a3a;
+
+}
+.categoryDiv{
+    display: flex;
+    justify-content: start;
+    padding: 5px 30%;
+
+}
+.mainbox::-webkit-scrollbar{
+    display: none;
+}
+.categoryDiv span {
+    font-size: 16px;
+    color: white;
 }
