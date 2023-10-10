@@ -34,3 +34,33 @@
     margin: 0 20px;
     color: white;
 }
+.search-result{
+    position: absolute;
+    height: 40vh;
+    width: 35%;
+    /* border: 1px solid white; */
+    z-index: 99;   
+    left: 34%;
+    top: 7%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}
+.search-result::-webkit-scrollbar{
+    display: none;
+}
+ul{
+    list-style: none;
+}
+.searchLis{
+    color: white;
+    font-size: 36px;
+    background-color: #2d2b2d;
+    width: 100%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.searchLis:hover{
+    background-color: #614661;
+}

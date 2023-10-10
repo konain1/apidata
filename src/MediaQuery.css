@@ -1,6 +1,8 @@
 
 @media screen and (max-width:600px) {
     
+    /* maincontainer */
+
     .maincontainer{
         display: flex;
     }
@@ -29,9 +31,9 @@
 
     .filteredDataTransferDiv{
 
-        
+        }
 
-    }
+    /* DataCard */
 
     .container{
         display: flex;
@@ -79,12 +81,10 @@
         font-size: 8px;
     }
     .mobile-view{
-        /* position: absolute; */
         display: flex;
         flex-direction: column;
         bottom: 0;
         left: 10px;
-        /* display: none; */
         margin: 10px 10px;
 
     }
@@ -133,7 +133,6 @@
 
     .poster-title{
         display: none;
-        /* display: flex; */
         align-content: space-between;
         padding: 10px;
         align-items: center;
@@ -201,3 +200,26 @@ ul {
     }
 
 }
+
+
+/* SideNavBar */
+
+/* 
+@media screen and (max-width:600px) {
+
+
+    .filteredsetting{
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mainbox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .genreBox{
+
+    }
+} */
