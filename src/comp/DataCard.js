@@ -65,7 +65,7 @@ useEffect(()=>{
                       <AiOutlineStar className="icon" /> <span>{item.rating.average}</span>
                       <br />
                       <div className="genre">
-                      <span>premiered: {item.premiered} { }</span>  <br></br>
+                      <span className="premiered">premiered: {item.premiered} { }</span>  <br></br>
 
                         {item.genres.map((list, key) => (
                           <span key={key} className="genres">
@@ -90,7 +90,7 @@ useEffect(()=>{
                   <div className="mobile-genre">
                   {item.genres.map((list, key) => (
                           <span key={key} className="genres">
-                            {list}
+                            {list} { }
                           </span>
                         ))}
                   </div>

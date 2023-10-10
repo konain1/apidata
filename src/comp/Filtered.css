@@ -4,5 +4,6 @@
     flex-direction: column;
     background-color: #2d2b2b;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    
 }

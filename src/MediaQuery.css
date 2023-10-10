@@ -42,13 +42,12 @@
         height: 80px;
         display: flex;
         justify-content:space-between ;
-        position: relative;
+        /* position: relative;   */
     }
     
     .mobile-poster-img,.poster-img{
         width: 60px;
         height: 80px;
-        display: block;
     }
     .poster span{
         font-size: 4px;
@@ -80,11 +79,13 @@
         font-size: 8px;
     }
     .mobile-view{
-        position: absolute;
+        /* position: absolute; */
         display: flex;
         flex-direction: column;
         bottom: 0;
         left: 10px;
+        /* display: none; */
+        margin: 10px 10px;
 
     }
    .mobile-genre span{
@@ -92,6 +93,22 @@
     color: white;
     font-size: 8px;
    }
+   .buttonUrl{
+    background: unset;
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: #2d2b2b;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    font-size: 8px;
+    display: none;
+
+
+  }
 
   /* removing desktop hover effect */
 
@@ -102,10 +119,35 @@
     overflow: hidden;
     cursor: pointer;
     }
-    .genre, .poster-title span , .poster-title .icon{
+    /* .genre, .poster-title span , .poster-title .icon{
+        display: none;
+    } */
+  
+    .buttonUrl{
+        width: 100px;
+        height: 10px;
+        display: none;
+
+    }
+
+
+    .poster-title{
+        display: none;
+        /* display: flex; */
+        align-content: space-between;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .poster-rating{
+        display: flex;
+        justify-content: center;
+    }
+    .icon{
+        height: 10px;
+        width: 10px;
+    }
+    .premiered{
         display: none;
     }
-  
-
-
 }
