@@ -10,7 +10,7 @@ import Pagination from './pagination/Pagination';
 import "./Filtered.css"
 import Search from './Searchbox/Search';
 
-function Filtered({ data ,toggle}) {
+function Filtered({ data }) {
 
   const ratingSlice = useSelector((state) => state.movieReducer.RatingSlice);
   const gen = useSelector((state) => state.movieReducer.getGenreMovies);
@@ -57,7 +57,7 @@ function Filtered({ data ,toggle}) {
   return (
     <div className='filteredDataTransferDiv'>
       <Search/>
-      <DataCard data={movies}  toggle={toggle}/>
+      <DataCard data={movies}  />
       <Pagination moviesList={movies} />
     </div>
   );

@@ -48,6 +48,7 @@ function Search() {
           </div>
           <input
             type='text'
+            autoComplete='false'
             placeholder='Movie Name'
             id='inputSearchBox'
             onChange={handleSearchChange}

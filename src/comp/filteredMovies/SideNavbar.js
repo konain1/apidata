@@ -78,7 +78,7 @@ function SideNavbar({ toggle }) {
   return (
     <div>
       <div className={filteredSettingClass}>
-        <div className='searchBox'>
+        {/* <div className='searchBox'>
           <div>
             <h2>Searching...</h2>
           </div>
@@ -100,7 +100,7 @@ function SideNavbar({ toggle }) {
               <p></p>
             )}
           </div>
-        </div>
+        </div> */}
         <div className='mainbox'>
           <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>
           <div className='genreBox'>
