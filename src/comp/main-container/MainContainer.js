@@ -19,7 +19,7 @@ function MainContainer() {
   
   const dispatch = useDispatch();
   
-  const [toggleFilter,setToggleFilter] = useState(true)
+  // const [toggleFilter,setToggleFilter] = useState(true)
   
   
   useEffect(()=>{
@@ -33,25 +33,25 @@ function MainContainer() {
   const fetchMovies = useSelector(state=> state.movieReducer.moviesData)
   
 
-    const filterHandler = ()=>{
-      console.log('toggle')
-      setToggleFilter(!toggleFilter)
-    }
+    // const filterHandler = ()=>{
+    //   console.log('toggle')
+    //   setToggleFilter(!toggleFilter)
+    // }
 
 
 
   return (
     <div className='maincontainer'>
     <div className='col-1'  >
-    <SideNavbar toggle={toggleFilter}/>
+    <SideNavbar />
     </div>
     <div className='col-2'>
     
-    <div className='toggle'><button onClick={filterHandler}>X</button></div>
+    {/* <div className='toggle'><button onClick={filterHandler}>X</button></div> */}
 
 
     {fetchMovies.length > 0 ? (
-      <Filtered key="filtered-component" data={fetchMovies} toggle={toggleFilter} />
+      <Filtered key="filtered-component" data={fetchMovies}  />
     ) : (
       'loading .....'
     )}

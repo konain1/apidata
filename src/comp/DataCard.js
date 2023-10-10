@@ -97,7 +97,7 @@ useEffect(()=>{
                   </div>
                  
 
-                  
+
                     <img
                       className="poster-img "
                       src={item.image.original}
