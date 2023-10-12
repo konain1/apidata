@@ -220,10 +220,11 @@ ul {
        width: 80%;
        overflow: hidden;
        border-radius: 10px;
+       display: flex;
+       justify-content: center;
 
     }
     .genreBox{
-
 
     }
    .genreBox h2{
@@ -233,7 +234,7 @@ ul {
         width: 30%;
         display: flex;
         justify-content: center;
-        align-items: start;
+        align-items: center;
     }
     .categoryDiv span{
         font-size: 8px;
