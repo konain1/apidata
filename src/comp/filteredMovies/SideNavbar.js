@@ -78,29 +78,7 @@ function SideNavbar({ toggle }) {
   return (
     <div>
       <div className={filteredSettingClass}>
-        {/* <div className='searchBox'>
-          <div>
-            <h2>Searching...</h2>
-          </div>
-          <input
-            type='text'
-            placeholder='Movie Name'
-            id='inputSearchBox'
-            onChange={handleSearchChange}
-          />
-          <button className='searchBtn' onClick={gotThatMovie}>Search</button>
-          <div className='search-result'>
-            {searchResults.length > 0 ? (
-              <ul>
-                {searchResults.map((result) => (
-                  <li onClick={(e) => setSeachInBox(e)} className='searchLis' key={result.id}>{result.name}</li>
-                ))}
-              </ul>
-            ) : (
-              <p></p>
-            )}
-          </div>
-        </div> */}
+      
         <div className='mainbox'>
           <div className='genreBox'>
           <h2 style={{color:'white'}}>Genres</h2>
@@ -120,6 +98,7 @@ function SideNavbar({ toggle }) {
             })}
           </div>
         </div>
+        <div className='bottomBox'>
         <div className='ratingRange'>
         <RangeInput maxRange={maxRange} /> 
         </div>
@@ -127,6 +106,8 @@ function SideNavbar({ toggle }) {
         <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>
 
         </div>
+        </div>
+       
         
 
       </div>

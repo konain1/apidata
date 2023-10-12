@@ -29,9 +29,7 @@ function RangeInput({ maxRange }) {
   return (
     <>
 
-    <div className='ratings'>
     
-    </div>
         <div className='ratingScale'>
       <input 
         type="range" 
