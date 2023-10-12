@@ -101,3 +101,15 @@
     font-size: 16px;
     color: white;
 }
+.resetDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.resetDiv button{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #3c3a3a;
+    color: white;
+}

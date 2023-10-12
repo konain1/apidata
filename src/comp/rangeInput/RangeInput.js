@@ -42,7 +42,7 @@ function RangeInput({ maxRange }) {
        
         onChange={handleRangeChange}
       />
-      <p>Rating: {value}</p>
+      <p style={{color:'white'}}>Rating: {value}+</p>
     </div>
     </>
   

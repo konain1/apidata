@@ -30,7 +30,7 @@ function SideNavbar({ toggle }) {
   const resetFilters = () => {
     dispatch(getGenreRedcure('')); // Reset genre selection
     dispatch(setSeacrhedMovie('')); // Reset searchmovie
-    // dispatch(setRatingSlice(1.0))   // reset rating
+    dispatch(setRatingSlice(1.0))   // reset rating
     // setMaxRange(1)
 
   };
@@ -102,7 +102,6 @@ function SideNavbar({ toggle }) {
           </div>
         </div> */}
         <div className='mainbox'>
-          <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>
           <div className='genreBox'>
           <h2 style={{color:'white'}}>Genres</h2>
             {category.map((genre, key) => {
@@ -122,7 +121,11 @@ function SideNavbar({ toggle }) {
           </div>
         </div>
         <div className='ratingRange'>
-        <RangeInput maxRange={maxRange}/> 
+        <RangeInput maxRange={maxRange} /> 
+        </div>
+        <div className='resetDiv'>
+        <button className='resetFilter' onClick={resetFilters}>Reset Filters</button>
+
         </div>
         
 
